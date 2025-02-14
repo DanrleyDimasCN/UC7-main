@@ -1,0 +1,73 @@
+.box-principal-cadastro {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline;
+
+    .box-imagem-logo {
+       background-color: #fff;
+       border-radius: 11px 11px 0 0;
+        img {
+            width: 90vw;
+            border-radius: 10px 10px 0  0;
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        height: 90vh;
+        width: 90vw;
+        background-color: #fff;
+
+        .box-p-aviso {
+            height: 1rem;
+            display: flex;
+            align-items: center;
+            gap: var(--espacamento-maior);
+            font-style: italic;
+            font-size: var(--font-secundaria);
+        }
+
+        input {
+            all: unset;
+            border: none;
+            outline: none;
+            padding:  1.5rem 0;
+            color: #000;
+
+            border-bottom: 1px solid #000000c5;
+            margin: 0 var(--espacamento-pequeno);
+        }
+
+        .box-button-cadastrar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: var(--espacamento-pequeno) 0;
+            
+            button {
+            all: unset;
+            background: #7E0B36;
+            border: none;
+            padding: 0;
+            font: inherit;
+            color: inherit;
+            cursor: pointer;
+            
+            height: 2.5rem;
+            width: 10rem;
+            text-align: center;
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: var(--font-peso);
+            border-radius: 0 5rem 5rem 0 ;
+        }
+        }
+
+      
+    }
+
+    
+}

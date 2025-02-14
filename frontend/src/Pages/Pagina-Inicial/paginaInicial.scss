@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+    
+    .box-pagina-inicial {
+        background-color: var(--cor-principal);
+        color: #fff;
+        display: flex;
+
+        .box-logo-perfil {
+            width: 30vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          
+        }
+
+        .box-pesquisar-minhaLista {
+            width: 70vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2em;
+        }
+    }   
+
+    .box-imagem-pagina-inicial {
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        img {
+            height: 80vh;
+            width: 100vw;
+        }
+    }
+}
+}

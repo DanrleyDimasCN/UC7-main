@@ -1,0 +1,105 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgres"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id String @id @default(uuid())
+  pseudoNome String @unique
+  senha String @unique
+
+  usuario Usuario[] @relation("UsuarioAdmin")
+
+  create_at DateTime? @default(now())
+  update_at DateTime? @default(now())
+
+  @@map("cadastro_admin")
+}
+
+model Usuario {
+  id String @id @default(uuid())
+  nome String @db.VarChar(100)
+  email String @db.VarChar(100)
+  cpf String @unique @db.VarChar(11)
+  senha String @db.VarChar(100)
+
+  // Relacionamento entre Usuario e lista
+  lista Minha_Lista? @relation("UsuarioLista")
+
+  // Relacionamento entre Usuario e Administrador
+
+  registrarId String @default("4ee8fb4a-86ef-4900-8af0-19cd3c6570c2")
+  registrar Admin @relation("UsuarioAdmin", fields: [registrarId], references: [id])
+
+  create_at DateTime? @default(now())
+  update_at DateTime? @default(now())
+
+  @@map("cadastrar_usuarios")
+}
+
+model Minha_Lista {
+  id Int @id @default(autoincrement())
+  nome String? @db.VarChar(100)
+
+  // Relacionamento entre Usuario e lista
+  usuario Usuario @relation("UsuarioLista", fields: [IdUsuario], references: [id])
+  IdUsuario String @unique
+
+  // Relacionamento entre Minha_lista e Vinhos
+  vinhos Vinhos[] @relation("ListaVinhos")
+
+  @@map("cadastro_minha_lista")
+}
+
+model Vinhos {
+  id Int @id @default(autoincrement())
+  nome String @db.VarChar(100)
+  tipo String @db.VarChar(50)
+  uva String @db.VarChar(50)
+  descricao String @db.VarChar(300)
+  nota Float? 
+
+ // Relacionamento entre Lista e vinhos
+  lista Minha_Lista? @relation("ListaVinhos", fields: [IdLista], references: [id])
+  IdLista Int
+
+  // Relacionamento entre Vinhos e Regiao
+  regiao Regiao @relation("VinhosRegiao", fields: [IdRegiao], references: [id])
+  IdRegiao Int
+
+   @@map("cadastro_vinhos")
+}
+
+model Pais {
+  id Int @id @default(autoincrement())
+  nome String @unique @db.VarChar(50)
+
+  // Relacionamento entre País e Região
+  regiao Regiao[] @relation("PaisRegiao")
+  
+  @@map("cadastro_pais")
+}
+
+model Regiao {
+  id Int @id @default(autoincrement())
+  nome String @unique @db.VarChar(50)
+
+  // Relacionamento entre Vinhos e Regiao
+  vinhos Vinhos[] @relation("VinhosRegiao")
+
+  // Relacionamento entre País e Região
+  pais Pais @relation("PaisRegiao", fields: [IdPais], references: [id])
+  IdPais Int
+
+@@map("cadastro_regiao")
+}
