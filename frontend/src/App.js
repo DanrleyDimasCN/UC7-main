@@ -1,6 +1,6 @@
 import React from 'react';
-import '././Reset-css/reset.css'
 import './App.css';
+import './Reset-css/reset.scss'
 import Rotas from './Routes';
 import { ToastContainer } from 'react-toastify'
 import AuthProvider from './Contexts/authContexts';

@@ -3,7 +3,7 @@ import Cadastrar from "../../Components/Cadastro/Cadastrar";
 import './cadastro.scss'
 export default function Cadastro() {
     return (
-        <div>
+        <div className="box-background-cadastro">
         <Cadastrar/>
         </div>
     )

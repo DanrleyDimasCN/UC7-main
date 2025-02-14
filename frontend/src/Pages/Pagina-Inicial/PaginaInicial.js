@@ -1,17 +1,21 @@
 import React from "react"
 import "../Pagina-Inicial/paginaInicial.scss"
 import paginaInicialViniVeta from '../../image/img-pagina-inicial.png'
+import logoperfil from '../../image/logo-perfil.png'
+import luneta from '../../image/logo-search.png'
 
 export default function PaginaInicial() {
     return (
         <div>
             <div className="box-pagina-inicial">
                 <div className="box-logo-perfil">
+                    <img src={logoperfil} alt="" />
                     <p>Perfil</p>
                 </div>
                 <div className="box-pesquisar-minhaLista">
                     <div className="box-pesquisar">
                         <p>Pesquisar</p>
+                        <img src={luneta} alt="" />
                     </div>
                     <div className="box-minha-lista">
                         <p>Minha Lista</p>
