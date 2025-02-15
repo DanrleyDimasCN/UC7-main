@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom";
 import "../Pagina-Inicial/paginaInicial.scss"
 import paginaInicialViniVeta from '../../image/img-pagina-inicial.png'
 import logoperfil from '../../image/logo-perfil.png'
@@ -6,11 +7,13 @@ import luneta from '../../image/logo-search.png'
 
 export default function PaginaInicial() {
     return (
-        <div>
+        <div className="box-screen-1024">
             <div className="box-pagina-inicial">
                 <div className="box-logo-perfil">
                     <img src={logoperfil} alt="" />
+                    <Link to='/perfil'>
                     <p>Perfil</p>
+                    </Link>
                 </div>
                 <div className="box-pesquisar-minhaLista">
                     <div className="box-pesquisar">

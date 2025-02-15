@@ -1,7 +1,6 @@
 * {
     
     .box-pagina-inicial {
-        height: 20vh;
         background-color: var(--cor-principal);
         color: #fff;
         display: flex;
@@ -14,6 +13,16 @@
             justify-content: center;
             font-size: 1.5rem;
             font-weight: var(--font-peso-medio);
+            cursor: pointer;
+
+            a {
+                text-decoration: none;
+                user-select: none;
+                outline: none; 
+                box-shadow: none;
+                background: transparent; 
+                color: inherit;
+              }
         }
 
         .box-pesquisar-minhaLista {
@@ -24,8 +33,8 @@
             justify-content: center;
             
             .box-pesquisar {
-                height: 15rem;
-                width: 14rem;
+                height: 10vh;
+                width: 70vw;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -33,6 +42,7 @@
                 font-size: var(--font-principal);
                 font-weight: var(--font-peso-medio);
                 border-bottom: 1px solid #fff;
+                cursor: pointer;
                
                 p {
                     margin-left: 1rem;
@@ -40,8 +50,8 @@
             }
 
             .box-minha-lista {
-                height: 15rem;
-                width: 14rem;
+                height: 10vh;
+                width: 70vw;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -49,6 +59,7 @@
                 border-top: .5px solid #fff;
                 font-size: var(--font-principal);
                 font-weight: var(--font-peso-medio);
+                cursor: pointer;
             }
         }
     }   
@@ -61,5 +72,68 @@
             height: 80vh;
             width: 100vw; 
         }
+    }
+}
+
+
+    @media (min-width:1024px) {
+
+        *  .box-screen-1024 {
+            display: flex;
+        }
+
+        * .box-pagina-inicial {
+            height: 100vh;
+            width: 40vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        * .box-pagina-inicial .box-logo-perfil {
+            height: 50vh;
+            width: 40vw;
+            border-bottom: 1px solid #fff;
+            font-size: 4rem;
+            gap: 2rem;
+
+            img {
+                height: 20vh;
+                width: 15vw;
+            }
+     
+    }
+
+    * .box-pagina-inicial .box-pesquisar-minhaLista {
+        height: 50vh;
+        width: 30vw;
+        display: flex;
+    }
+
+    * .box-pagina-inicial .box-pesquisar-minhaLista .box-pesquisar {
+        height: 40vh;
+        width: 40vw;
+        border: none;
+        font-size: 4rem;
+        border-bottom: 1px solid #fff;
+        gap: 1rem;
+
+        img {
+            height: 2.5rem;
+        }
+    }
+
+    * .box-pagina-inicial .box-pesquisar-minhaLista .box-minha-lista {
+        height: 40vh;
+        width: 40vw;
+        border: none;
+        font-size: 4rem;
+        
+    }
+
+    * .box-imagem-pagina-inicial img {
+        height: 100vh;
+        width: 60vw;
     }
 }
