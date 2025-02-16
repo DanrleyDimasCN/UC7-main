@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import apiLocal from "../../API/apiLocal";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
-import "./estilo.usuarioinfo.scss";
+import fotoPerfil from '../../image/foto-perfil.png'
 
 export default function UsuariosInfo() {
     const [dadosUsuarios, setDadosUsuarios] = useState([]);
@@ -43,43 +43,36 @@ export default function UsuariosInfo() {
     }
 
     return (
-        <div className="conteinerDashboardGeral">
-            <table className="usuariosTabela">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nome</th>
-                        <th>Email</th>
-                        <th>CPF</th>
-                        <th>Editar</th>
-                        <th>Apagar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {dadosUsuarios.length > 0 ? (
-                        dadosUsuarios.map((item) => (
-                            <tr key={item.id}>
-                                <td>{item.id}</td>
-                                <td>{item.nome}</td>
-                                <td>{item.email}</td>
-                                <td>{item.registrar?.nome || "Vazio"}</td>
-                                <td>
-                                    <Link to={`/EditarUsuarios/${item.id}`} onClick={() => console.log(item.id)}>Editar</Link>
-                                </td>
-                                <td>
-                                    <button type="button" onClick={() => apagarUsuarios(item.id)}>
-                                        Apagar
-                                    </button>
-                                </td>
-                            </tr>
-                        ))
-                    ) : (
-                        <tr>
-                            <td colSpan="6">Carregando usuários...</td>
-                        </tr>
-                    )}
-                </tbody>
-            </table>
+        <div  className="box-perfil-background">
+            <div className="box-perfil-principal">
+                    <div className="box-perfil">
+                        <div className="box-perfil-foto">
+                            <img src={fotoPerfil} alt="" />
+                        </div>
+                        <div className="box-perfil-nome">
+                                <h2>Velvinno</h2>
+                                <p>Delancan't</p>
+                        </div>
+                    </div>
+                    <div className="box-perfil-sobre">
+                            <p>Gosta de: Vinhos Secos e encorpados,
+                            Principalmente de Uvas Malbec e Tannat.</p>
+                    </div>
+            </div>
+            <div className="box-perfil-dados">
+                <ul className="box-perfil-lista">
+                    <li><p>Idade: 42</p></li>
+                    <li><p>E-mail: velvinno@email.com</p></li>
+                    <li><p>Telefone: (14) xxxxxx-xxxx</p></li>
+                    <li><p>CPF: 12*******91</p></li>  
+                    <li><p>Genero: Másculino</p></li>
+                    <li><p>Membro desde: 2 de Setembro de 2020</p></li>
+                </ul>
+            </div>
+            <div className="box-perfil-button-voltar-editar">
+                  <button><Link to='/pagina-Inicial'><p>Voltar</p></Link></button>
+                  <button><Link to='/EditarUsuarios/:id'><p>Editar</p></Link></button>
+            </div>
         </div>
     );
 }

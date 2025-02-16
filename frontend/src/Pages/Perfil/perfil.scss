@@ -1,0 +1,101 @@
+.box-perfil-background {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--cor-principal);
+
+    .box-perfil-principal {
+        width: 90vw;    
+        display: flex;
+        flex-direction: column;
+        margin-top: var(--espacamento-pequeno);
+        background-color: var(--cor-secundaria);
+        border-radius: var(--borda-arredondamento);
+    .box-perfil {
+        margin-top: 1rem;
+        display: flex;
+
+        .box-perfil-foto {
+                margin: 0 1rem;
+                background-color: #fff;
+                border-radius: var(--borda-arredondamento);
+        }
+
+        .box-perfil-nome {
+            h2 {
+                color: var( --cor-complementar);
+                font-size: 2.5rem;
+                font-weight: var(--font-peso);
+            }
+    
+            p {
+                font-size: 1.5rem;
+                font-weight: var(--font-peso-medio);
+                color: #fff;
+            }
+        }
+    }
+
+    .box-perfil-sobre {
+        color: #fff;
+        margin: 1rem;
+
+        p {
+            height: 0 1rem;
+        }
+    }
+}
+    .box-perfil-dados {
+        margin-top: var(--espacamento-menor);
+
+        .box-perfil-lista {
+        width: 90vw;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--espacamento-maior);
+
+            li {
+            padding: .5rem 0rem;
+            background-color: #fff;
+            border-right: 1rem solid var(--cor-secundaria);
+            border-radius: 20px;
+             p {
+                margin: 0 .5rem;
+             }
+            }
+        }
+    }
+
+    .box-perfil-button-voltar-editar {
+        height: 20rem;
+        width: 90vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+       
+        button {
+            all: unset;
+            height: 2rem;
+            width: 4rem;
+            border-radius: var(--borda-arredondamento);
+            background-color: var(--cor-secundaria);    
+            font-weight: var(--font-peso-menor);
+            text-align: center;
+            cursor: pointer;
+
+            a {
+                text-decoration: none;
+                user-select: none;
+                outline: none; 
+                box-shadow: none;
+                background: transparent; 
+                color: inherit;
+                color: #fff;
+            }
+        }
+       
+    }
+}
