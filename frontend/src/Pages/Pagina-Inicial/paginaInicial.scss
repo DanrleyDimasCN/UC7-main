@@ -16,6 +16,10 @@
             font-weight: var(--font-peso-medio);
             cursor: pointer;
 
+            img {
+                height: 3rem;
+            }
+
             a {
                 text-decoration: none;
                 user-select: none;
@@ -23,6 +27,7 @@
                 box-shadow: none;
                 background: transparent; 
                 color: inherit;
+                text-align: center;
               }
         }
 
@@ -44,6 +49,10 @@
                 font-weight: var(--font-peso-medio);
                 border-bottom: 1px solid #fff;
                 cursor: pointer;
+
+                img {
+                    height: 2rem;
+                }
                
                 p {
                     margin-left: 1rem;
@@ -98,6 +107,7 @@
             border-bottom: 1px solid #fff;
             font-size: 4rem;
             gap: 2rem;
+            text-align: center;
 
             img {
                 height: 20vh;

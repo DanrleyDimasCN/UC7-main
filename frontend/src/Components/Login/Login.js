@@ -4,12 +4,11 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import bottle from '../../image/wine-bottler.png'
 import glass from '../../image/wine-glass.png'
-import { useNavigate } from "react-router-dom";
 
 export default function Login() {
 
-        const { loginEntrada } = useContext(AutenticadoContexto)
-        const navigate = useNavigate(); 
+        const { loginEntrada, verificarToken } = useContext(AutenticadoContexto)
+        verificarToken()
         
         const [email, setEmail] = useState('')
         const [senha, setSenha] = useState('')
@@ -21,10 +20,9 @@ export default function Login() {
                 return
             }
             try {
-                await loginEntrada(email, senha)
-                navigate("/pagina-Inicial")
+               await loginEntrada(email, senha)
             } catch (err) {
-                
+                console.log(err); 
             }
         }
 

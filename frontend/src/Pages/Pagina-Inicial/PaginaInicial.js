@@ -10,8 +10,8 @@ export default function PaginaInicial() {
         <div className="box-screen-1024">
             <div className="box-pagina-inicial">
                 <div className="box-logo-perfil">
-                    <img src={logoperfil} alt="" />
                     <Link to='/perfil'>
+                     <img src={logoperfil} alt="" />
                     <p>Perfil</p>
                     </Link>
                 </div>

@@ -10,16 +10,26 @@ export default function Cadastrar() {
 
     const mudarTela = useNavigate()
     const [nome, setNome ] = useState('')
+    const [sobrenome, setSobrenome ] = useState('')
     const [email, setEmail ] = useState('')
-    const [cpf, setCpf ] = useState('')
+    const [data_nascimento, setDataNascimento ] = useState('')
+    const [genero, setGenero ] = useState('NAO_INFORMADO')
     const [senha, setSenha ] = useState('')
     const [confirmeSenha, setConfirmeSenha ] = useState('')
+
+    const escolherGenero = (e) => {
+        setGenero(e.target.value);
+    }
+
+    const formatarData = (data) => {
+        return data;
+    }
     
     async function CadastroUsuarios(e) {
       try {
         e.preventDefault()
 
-        if(!nome || !email || !cpf || !senha) {
+        if(!nome || !sobrenome || !email || !data_nascimento || !genero || !senha) {
             alert("Campo em Branco")
             return
         }
@@ -29,11 +39,18 @@ export default function Cadastrar() {
             return
         }
 
+        const dataFormatada = formatarData(data_nascimento)
+
+        console.log('Data formatada para envio:', dataFormatada);
+
+
         await apiLocal.post('/CadastrarUsuarios', {
             nome,
+            sobrenome,
             email,
+            data_nascimento: dataFormatada,
+            genero,
             senha,
-            cpf
         })
         toast.success('Cadastro Efetuado com Sucesso', {
             toastId: 'ToastId'
@@ -66,17 +83,56 @@ export default function Cadastrar() {
 
             <input
             type="text"
+            placeholder='Sobrenome'
+            value={sobrenome}
+            onChange={(e) => setSobrenome(e.target.value)}
+            />
+
+            <input
+            type="text"
             placeholder='E-mail'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             />
 
             <input
-            type="text"
-            placeholder='CPF'
-            value={cpf}
-            onChange={(e) => setCpf(e.target.value)}
+            type="date"
+            placeholder='Data de Nascimento'
+            value={data_nascimento}
+            onChange={(e) => setDataNascimento(e.target.value)}
             />
+            <div className="box-cadastro-genero">
+                <label>
+                <input
+                    type="radio"
+                    value={"MASCULINO"}
+                    checked={genero === "MASCULINO"}
+                    placeholder='genero'
+                    onChange={escolherGenero}
+                    />
+                    Masculino
+                </label>
+                <label>
+                <input
+                    type="radio"
+                    value={"FEMININO"}
+                    checked={genero === "FEMININO"}
+                    placeholder='genero'
+                    onChange={escolherGenero}
+                    />
+                    Feminino
+                </label>
+                <label>
+                <input
+                    type="radio"
+                    value={"NAO_INFORMADO"}
+                    checked={genero === "NAO_INFORMADO"}
+                    placeholder='genero'
+                    onChange={escolherGenero}
+                    />
+                    Prefiro não informar
+                </label>
+            </div>
 
             <input
             type="password"

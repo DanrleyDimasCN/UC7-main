@@ -13,12 +13,16 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum Genero {
+  MASCULINO
+  FEMININO
+  NAO_INFORMADO
+}
+
 model Admin {
   id String @id @default(uuid())
   pseudoNome String @unique
   senha String @unique
-
-  usuario Usuario[] @relation("UsuarioAdmin")
 
   create_at DateTime? @default(now())
   update_at DateTime? @default(now())
@@ -29,24 +33,21 @@ model Admin {
 model Usuario {
   id String @id @default(uuid())
   nome String @db.VarChar(100)
-  email String @db.VarChar(100)
-  cpf String @unique @db.VarChar(11)
+  sobrenome String @db.VarChar(100)
+  descricao String? @db.VarChar(300)
+  email String @unique @db.VarChar(100)
+  data_nascimento DateTime
+  genero Genero @default(NAO_INFORMADO)
   senha String @db.VarChar(100)
 
   // Relacionamento entre Usuario e lista
   lista Minha_Lista? @relation("UsuarioLista")
-
-  // Relacionamento entre Usuario e Administrador
-
-  registrarId String @default("4ee8fb4a-86ef-4900-8af0-19cd3c6570c2")
-  registrar Admin @relation("UsuarioAdmin", fields: [registrarId], references: [id])
 
   create_at DateTime? @default(now())
   update_at DateTime? @default(now())
 
   @@map("cadastrar_usuarios")
 }
-
 model Minha_Lista {
   id Int @id @default(autoincrement())
   nome String? @db.VarChar(100)

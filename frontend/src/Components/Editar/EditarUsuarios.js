@@ -25,7 +25,7 @@ export default function EditarUsuarios() {
     
             try {
                 
-                const resposta = await apiLocal.post('/ConsultarUsuariosUnico', { id }, {
+                const resposta = await apiLocal.post("/ConsultarUsuariosUnico", {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -52,7 +52,8 @@ export default function EditarUsuarios() {
             toast.warn("ID do usuário não fornecido.");
             mudarTela("/");
         }
-    }, [id, mudarTela]);   
+    }, [id, token, mudarTela]);   
+
     async function enviarAlteracao(e) {
         e.preventDefault();
 
@@ -62,9 +63,8 @@ export default function EditarUsuarios() {
         }
 
         try {
-            console.log("Enviando dados para alteração:", {id ,nome, email, senha });
-            const resposta = await apiLocal.post('/ConsultarUsuariosUnico', {
-                id,
+            console.log("Enviando dados para alteração:", {nome, email, senha });
+            const resposta = await apiLocal.put(`/AlterarDadosUsuarios/${id}`, {
                 nome,
                 email,
                 senha

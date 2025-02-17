@@ -8,56 +8,55 @@ interface Login {
 }
 
 class LoginServices {
-    async loginUsuarios({email, senha}: Login) {
-       const usuario = await prismaClient.usuario.findFirst({
-        where: {
-            email: email
-        }
-       })
-       if(!usuario) {
-        throw new Error ('Usuario ou Senha incorretos');
-       }
-
-       const token = sign({
-        id: usuario.id,
-        nome: usuario.nome,
-        email: usuario.email
-       },
-        process.env.JWT_SECRETO,
-        {
-            subject: usuario.id,
-            expiresIn: '8h'
-        }) 
-
-       const senhaCrypt = await compare(senha, usuario.senha)
-
-       return {
-        id: usuario.id,
-        nome: usuario.nome,
-        email: usuario.email,
-        token: token
-       }
-       
-        
-    }
-
-    async verificaToken(id: string) {
+    async loginUsuarios({ email, senha }: Login) {
         const usuario = await prismaClient.usuario.findFirst({
-            where: {
-                id: id
-            },
-            select: {
-                id: true, 
+            where: { 
+                email: email
             }
         });
     
         if (!usuario) {
-            throw new Error('Usuário não encontrado');
+            throw new Error('Usuário ou senha incorretos');
+        }
+    
+        const senhaValida = await compare(senha, usuario.senha);
+        if (!senhaValida) {
+            throw new Error('Usuário ou senha incorretos');
         }
        
-        return { message: 'Token válido', usuario };
+        const token = sign(
+            {
+                id: usuario.id,
+                nome: usuario.nome,
+                email: usuario.email
+            },
+            process.env.JWT_SECRETO,
+            {
+                subject: usuario.id,
+                expiresIn: '8h'
+            }
+        );
+    
+        return {
+            id: usuario.id,
+            nome: usuario.nome,
+            email: usuario.email,
+            token: token
+        }
+    }
+
+    async verificaToken(id: string) {
+        const resposta = await prismaClient.usuario.findFirst({
+            where: {
+                id: id
+            },
+            select: {
+                id: true,
+                nome: true
+            }
+        });
+        return resposta 
     }
     
 }
-
 export { LoginServices }
