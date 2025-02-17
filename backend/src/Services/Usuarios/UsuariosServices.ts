@@ -67,7 +67,7 @@ class UsuariosServices {
 
         console.log("Consultando usuário com usuarioId:", id);
 
-        const resposta = await prismaClient.usuario.findFirst({
+        const resposta = await prismaClient.usuario.findUnique({
             where: {
                 id: id
             },

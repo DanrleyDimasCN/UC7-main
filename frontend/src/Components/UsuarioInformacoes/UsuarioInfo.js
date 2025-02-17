@@ -10,7 +10,7 @@ export default function UsuariosInfo() {
     const {verificarToken, token} = useContext(AutenticadoContexto)
     verificarToken()
 
-    const [dadosUsuarios, setDadosUsuarios] = useState([''])
+    const [dadosUsuarios, setDadosUsuarios] = useState('')
 
     useEffect(() => {
         try {

@@ -22,7 +22,7 @@ export default function Login() {
             try {
                await loginEntrada(email, senha)
             } catch (err) {
-                console.log(err); 
+                
             }
         }
 
