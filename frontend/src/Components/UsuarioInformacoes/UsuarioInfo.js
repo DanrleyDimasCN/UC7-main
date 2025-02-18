@@ -6,48 +6,33 @@ import { toast } from "react-toastify";
 import fotoPerfil from '../../image/foto-perfil.png';
 
 export default function UsuariosInfo() {
+    const { verificarToken } = useContext(AutenticadoContexto);
+    const [dadosUsuarios, setDadosUsuarios] = useState(null);
   
-    const {verificarToken, token} = useContext(AutenticadoContexto)
-    verificarToken()
-
-    const [dadosUsuarios, setDadosUsuarios] = useState([''])
+    useEffect(() => {
+        verificarToken();
+    }, [verificarToken]);
 
     useEffect(() => {
-        try {
-            async function consultarDadosusuarios() {
-                const resposta = await apiLocal.get('/ConsultarUsuariosUnico', {
+        async function consultarDadosUsuarios() {
+            try {
+                const token = JSON.parse(localStorage.getItem('@token'));
+
+                const resposta = await apiLocal.post('/ConsultarUsuariosUnico', {}, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
-                })
-                setDadosUsuarios(resposta.data)
+                });
+
+                setDadosUsuarios(resposta.data);
+            } catch (err) {
+                toast.error('Erro ao Comunicar com BackEnd', { toastId: 'ToastId' });
             }
-            consultarDadosusuarios()
-        } catch (err) {
-            toast.error('Erro ao Comunicar com BackEnd', {
-                toastId: 'ToastId'
-            })
         }
-        // eslint-disable-next-line
-    }, [])
 
-    // async function apagaUsuarios(id) {
-    //     try {
-    //         await apiLocal.delete(`/ApagarUsuario/${id}`, {
-    //             headers: {
-    //                 Authorization: `Bearer ${token}`
-    //             }
-    //         })
-    //         toast.success('Registro Apagado com Sucesso', {
-    //             toastId: 'ToastId'
-    //         })
-    //     } catch (err) {
-    //         toast.error('Erro ao Comunicar com BackEnd', {
-    //             toastId: 'ToastId'
-    //         })
-    //     }
-    // }   
-
+        consultarDadosUsuarios();
+    }, []);
+   
     if (!dadosUsuarios) {
         return <p>Carregando...</p>;
     }

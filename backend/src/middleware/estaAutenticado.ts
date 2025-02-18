@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import { verify } from 'jsonwebtoken'
 
 interface Payload {
-    sub: string;  
+    sub: string
 }
 
 export function estaAutenticado(
@@ -15,19 +15,17 @@ export function estaAutenticado(
         return res.json({ dados: 'Token Inválido' })
     }
 
-    const [, token] = autToken.split(' ');  
+    const [, token] = autToken.split(' ')
 
     try {
       
-        const { sub } = verify(token, 
-
+        const { sub } = verify(
+            token, 
             process.env.JWT_SECRETO
-
-        )as Payload;
+        )as Payload
         
         req.usuarioId = sub;  
         return next();  
-
     } catch (err) {
         return res.json({dados: 'Token inválido.' });
     }
