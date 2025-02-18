@@ -9,10 +9,10 @@ export default function Autenticado() {
         <BrowserRouter>
             <Routes>
                 <Route path="/pagina-Inicial" element={<PaginaInicial/>}/>
-                <Route path="/Perfil" element={<Perfil/>}/>
+                <Route path="/perfil" element={<Perfil/>}/>
                 <Route path="/EditarUsuarios/:id" element={<Editar/>} /> 
 
-                <Route path="*" element={<PaginaInicial/>} />
+                <Route path="*" element={<Perfil/>}/>
             </Routes>
         </BrowserRouter>
     )

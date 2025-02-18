@@ -45,7 +45,6 @@ export default function AuthProvider({ children }) {
             localStorage.setItem('@token', JSON.stringify(resposta.data.token))
             localStorage.setItem('@nome', JSON.stringify(resposta.data.nome))
             setTokenT(true)
-            
         } catch (err) {
             toast.error('Erro de Comunicação')
             
@@ -57,5 +56,6 @@ export default function AuthProvider({ children }) {
             {children}
         </AutenticadoContexto.Provider>
     )
+
 
 }

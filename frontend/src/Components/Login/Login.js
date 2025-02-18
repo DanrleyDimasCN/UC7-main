@@ -7,7 +7,8 @@ import glass from '../../image/wine-glass.png'
 
 export default function Login() {
 
-        const { loginEntrada } = useContext(AutenticadoContexto)
+        const { loginEntrada, verificarToken } = useContext(AutenticadoContexto)
+        verificarToken()
         
         const [email, setEmail] = useState('')
         const [senha, setSenha] = useState('')
@@ -19,11 +20,9 @@ export default function Login() {
                 return
             }
             try {
-                console.log("Email:", email, "Senha", senha);
-                
                await loginEntrada(email, senha)
             } catch (err) {
-                
+                console.log(err); 
             }
         }
 
