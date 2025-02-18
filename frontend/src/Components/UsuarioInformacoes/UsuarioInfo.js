@@ -7,6 +7,7 @@ import fotoPerfil from '../../image/foto-perfil.png';
 
 export default function UsuariosInfo() {
 <<<<<<< HEAD
+<<<<<<< HEAD
     const { verificarToken } = useContext(AutenticadoContexto);
     const [dadosUsuarios, setDadosUsuarios] = useState(null);
 
@@ -14,11 +15,16 @@ export default function UsuariosInfo() {
         verificarToken();
     }, [verificarToken]);
 =======
+=======
+>>>>>>> parent of 6898384 (18/02)
   
     const {verificarToken, token} = useContext(AutenticadoContexto)
     verificarToken()
 
     const [dadosUsuarios, setDadosUsuarios] = useState([''])
+<<<<<<< HEAD
+>>>>>>> parent of 6898384 (18/02)
+=======
 >>>>>>> parent of 6898384 (18/02)
 
     useEffect(() => {
