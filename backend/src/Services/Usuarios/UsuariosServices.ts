@@ -64,6 +64,11 @@ class UsuariosServices {
 
     async consultarUsuariosUnico(id: string) {
         console.log("ID recebido no Serviço:", id)
+<<<<<<< HEAD
+=======
+
+        console.log("Consultando usuário com usuarioId:", id);
+>>>>>>> parent of 6898384 (18/02)
 
         console.log("Consultando usuário com usuarioId:", id);
 
