@@ -8,7 +8,7 @@ import fotoPerfil from '../../image/foto-perfil.png';
 export default function UsuariosInfo() {
     const { verificarToken } = useContext(AutenticadoContexto);
     const [dadosUsuarios, setDadosUsuarios] = useState(null);
-  
+
     useEffect(() => {
         verificarToken();
     }, [verificarToken]);
