@@ -18,13 +18,13 @@ router.get('/ConsultarAdmin', new AdminControllers().consultarAdmin)
 // Rota - Cadastrar Usuarios
 router.post('/CadastrarUsuarios',  new UsuariosControllers().cadastro_usuarios)
 router.post('/ConsultarUsuariosUnico', estaAutenticado, new UsuariosControllers().consultarUsuariosUnico)
-// router.get('/ConsultarUsuariosUnico', estaAutenticado, new UsuariosControllers().consultarUsuariosUnico)
+router.get('/ConsultarUsuariosUnico', estaAutenticado, new UsuariosControllers().consultarUsuariosUnico)
 router.get('/ConsultarUsuarios', estaAutenticado, new UsuariosControllers().consultarUsuarios)
 router.put('/AlterarDadosUsuarios', estaAutenticado, new UsuariosControllers().alterarDadosUsuarios)
 router.delete('/ApagarUsuarios/:id', estaAutenticado, new UsuariosControllers().apagarUsuarios)
 
 // Rota - Login Usuarios
-router.post('/LoginUsuarios', new LoginUsuariosControllers().loginUsuarios)
+router.post('/LoginUsuarios', estaAutenticado, new LoginUsuariosControllers().loginUsuarios)
 router.get('/VerificaToken', estaAutenticado, new LoginUsuariosControllers().verificaToken)
 
 // Rota - Adicionar pais e consultar pais

@@ -3,12 +3,12 @@ import { compare } from "bcryptjs";
 import { sign } from "jsonwebtoken";
 
 interface Login {
-    email: string,
-    password: string
+    email: string
+    senha: string
 }
 
 class LoginServices {
-    async loginUsuarios({ email, password }: Login) {
+    async loginUsuarios({ email, senha }: Login) {
         const usuario = await prismaClient.usuario.findFirst({
             where: { 
                 email: email
@@ -19,7 +19,7 @@ class LoginServices {
             throw new Error('Usuário ou senha incorretos');
         }
     
-        const senhaValida = await compare(password, usuario.senha);
+        const senhaValida = await compare(senha, usuario.senha);
         if (!senhaValida) {
             throw new Error('Usuário ou senha incorretos');
         }

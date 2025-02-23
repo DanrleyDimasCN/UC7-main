@@ -11,6 +11,8 @@ export default function NAutenticado() {
             <Routes>
                 <Route path="/" element={<Inicio/>} />
                 <Route path="/cadastro" element={<Cadastro/>} />
+                {/* <Route path="/pagina-Inicial" element={<PaginaInicial/>}/>
+                <Route path="/perfil" element={<Perfil/>}/> */}
 
                 <Route path="*" element={<Inicio/>} />
             </Routes>

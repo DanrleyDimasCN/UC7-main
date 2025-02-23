@@ -7,20 +7,20 @@ interface CadUsuarios {
     email: string;
     data_nascimento: string;
     genero: "MASCULINO" | "FEMININO" | "NAO_INFORMADO";
-    password: string;
+    senha: string;
 }
 
 interface AlterarUsuarios {
     id: string;
     nome: string;
     email: string;
+    senha: string;
 }
 
 class UsuariosServices {
-    async cadastrar_usuarios({ nome, sobrenome, email, data_nascimento, genero, password }: CadUsuarios) {
+    async cadastrar_usuarios({ nome, sobrenome, email, data_nascimento, genero, senha }: CadUsuarios) {
+        const senhaCriptografada = await hash(senha, 8);
 
-
-        const senhaCriptografada = await hash(password, 8);
         const emailExiste = await prismaClient.usuario.findFirst({
             where: { email }
         });
@@ -36,11 +36,11 @@ class UsuariosServices {
 
         await prismaClient.usuario.create({
             data: {
-                nome: nome,
-                sobrenome: sobrenome,
-                email: email,
+                nome,
+                sobrenome,
+                email,
                 data_nascimento: dataNascimento.toISOString(),
-                genero: genero,
+                genero,
                 senha: senhaCriptografada,
             }
         });
@@ -63,12 +63,21 @@ class UsuariosServices {
     }
 
     async consultarUsuariosUnico(id: string) {
+        console.log("ID recebido no Serviço:", id)
+<<<<<<< HEAD
+=======
 
-        const resposta = await prismaClient.usuario.findFirst({
+        console.log("Consultando usuário com usuarioId:", id);
+>>>>>>> parent of 6898384 (18/02)
+
+        console.log("Consultando usuário com usuarioId:", id);
+
+        const resposta = await prismaClient.usuario.findUnique({
             where: {
                 id: id
             },
             select: {
+                id: true,
                 nome: true,
                 sobrenome: true,
                 email: true,
@@ -79,6 +88,13 @@ class UsuariosServices {
                
             }
         });
+
+        console.log("Resposta da consulta:", resposta);
+        
+
+        if (!resposta) {
+            throw new Error("Usuário não encontrado");
+        }
 
         const hoje = new Date();
         const nascimento = new Date(resposta.data_nascimento);
@@ -92,27 +108,47 @@ class UsuariosServices {
         return { ...resposta, idade };
     }
 
-    async alterarDadosUsuarios({ id, nome, email }: AlterarUsuarios) {
-         await prismaClient.usuario.update({
+    async alterarDadosUsuarios({ id, nome, email, senha }: AlterarUsuarios) {
+
+        if (!id) {
+            throw new Error("ID do usuário não fornecido.");
+        }
+
+        const usuarioExistente = await prismaClient.usuario.findUnique({
             where: {
                 id: id,
-            },
-            data: {
-                nome: nome,
-                email: email
             }
         });
 
-        return ({dados: 'Cadastro Alterado Com Sucesso'})
+        if (!usuarioExistente) {
+            throw new Error("Usuário não encontrado");
+        }
+
+        const senhaCriptografada = senha ? await hash(senha, 8) : undefined;
+
+        await prismaClient.usuario.update({
+            where: { id },
+            data: {
+                nome,
+                email,
+                senha: senhaCriptografada || usuarioExistente.senha,
+            }
+        });
     }
 
     async apagarUsuarios(id: string) {
+        const usuarioExistente = await prismaClient.usuario.findUnique({
+            where: { id: id, }
+        });
+
+        if (!usuarioExistente) {
+            throw new Error("Usuário não encontrado");
+        }
 
         await prismaClient.usuario.delete({
-            where: {
-                id: id 
-            }
+            where: { id }
         });
+
         return { dados: "Registro Apagado com Sucesso" };
     }
 }
