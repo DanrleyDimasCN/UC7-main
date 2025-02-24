@@ -82,31 +82,31 @@ export default function EditarUsuarios() {
     }
 
     return (
-        <div>
-            <form onSubmit={enviarAlteracao}>
-                <input 
-                    type="text"
-                    placeholder="Digite o Nome"
-                    value={nome}
-                    onChange={(e) => setNome(e.target.value)}
-                />
-
-                <input 
-                    type="text"
-                    placeholder="Digite o novo E-mail"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
-
-                <input 
-                    type="password"
-                    placeholder="Digite a nova senha"
-                    value={senha}
-                    onChange={(e) => setSenha(e.target.value)}
-                />
-
-                <button type="submit">Enviar</button>
+        <div className="box-editar">
+            <div className="box-form">
+                <form onSubmit={enviarAlteracao}>
+                <p>Digite as informações abaixo</p>
+                    <input
+                        type="text"
+                        placeholder="Digite o Nome"
+                        value={nome}
+                        onChange={(e) => setNome(e.target.value)}
+                    />
+                    <input
+                        type="text"
+                        placeholder="Digite o novo E-mail"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <input
+                        type="password"
+                        placeholder="Digite a nova senha"
+                        value={senha}
+                        onChange={(e) => setSenha(e.target.value)}
+                    />
+                    <button type="submit">Enviar</button>
             </form>
+             </div>
         </div>
     );
 }

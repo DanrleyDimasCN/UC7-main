@@ -15,8 +15,9 @@
         border-radius: var(--borda-arredondamento);
 
         .box-perfil {
-            margin-top: 1rem;
+            height: 8rem;
             display: flex;
+            align-items: center;
 
             .box-perfil-foto {
                 margin: 0 1rem;
