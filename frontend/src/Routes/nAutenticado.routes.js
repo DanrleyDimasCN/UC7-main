@@ -5,6 +5,7 @@ import Cadastro from "../Pages/Registro/Cadastro";
 import PaginaInicial from "../Pages/Pagina-Inicial/PaginaInicial";
 import Perfil from "../Pages/Perfil/Perfil"
 import Editar from "../Components/Editar/EditarUsuarios";
+import Pesquisar from "../Pages/Pesquisar/Pesquisar";
 
 export default function NAutenticado() {
     return (
@@ -14,7 +15,8 @@ export default function NAutenticado() {
                 <Route path="/cadastro" element={<Cadastro/>} />
                 <Route path="/Perfil" element={<Perfil/>}/>
                 <Route path="/paginaInical" element={<PaginaInicial/>}/>
-                <Route path="/EditarUsuarios/:id" element={<Editar/>} /> 
+                <Route path="/EditarUsuarios/:id" element={<Editar/>} />
+                <Route path="/pesquisar" element={<Pesquisar/>} />
 
                 <Route path="*" element={<Inicio/>} />
             </Routes>

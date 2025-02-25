@@ -17,8 +17,10 @@ export default function PaginaInicial() {
                 </div>
                 <div className="box-pesquisar-minhaLista">
                     <div className="box-pesquisar">
-                        <p>Pesquisar</p>
-                        <img src={luneta} alt="" />
+                        <Link to='/pesquisar'>
+                            <p>Pesquisar</p>
+                            <img src={luneta} alt="" />
+                        </Link>
                     </div>
                     <div className="box-minha-lista">
                         <p>Minha Lista</p>

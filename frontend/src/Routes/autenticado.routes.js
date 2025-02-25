@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Perfil from "../Pages/Perfil/Perfil"
 import Editar from "../Pages/Editar/Editar"
 import PaginaInicial from "../Pages/Pagina-Inicial/PaginaInicial"
+import Pesquisar from "../Pages/Pesquisar/Pesquisar"
 
 export default function Autenticado() {
     return (
@@ -11,6 +12,7 @@ export default function Autenticado() {
                 <Route path="/pagina-Inicial" element={<PaginaInicial/>}/>
                 <Route path="/Perfil" element={<Perfil/>}/>
                 <Route path="/EditarUsuarios/:id" element={<Editar/>} /> 
+                <Route path="/pesquisar" element={<Pesquisar/>} />
 
                 <Route path="*" element={<PaginaInicial/>} />
             </Routes>

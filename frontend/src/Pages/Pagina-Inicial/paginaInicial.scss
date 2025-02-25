@@ -50,12 +50,25 @@
                 border-bottom: 1px solid #fff;
                 cursor: pointer;
 
+                a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-decoration: none;
+                    user-select: none;
+                    outline: none; 
+                    box-shadow: none;
+                    background: transparent; 
+                    color: inherit;
+                    text-align: center;
+                    
                 img {
-                    height: 2rem;
+                    height: 1.5rem;
                 }
                
                 p {
                     margin-left: 1rem;
+                }
                 }
             }
 
@@ -85,6 +98,47 @@
     }
 }
 
+
+@media (min-width:600px) {
+    * .box-background .box-principal-login {
+        height: 95vh;
+    }
+
+    .box-background .box-principal-login .box-novo-cadastro {
+        height: 5rem;
+        width: 60vw;
+        font-size: 1.3rem;
+    }
+
+    .box-background .box-principal-login .box-dados-login .box-button-entrar button {
+        all: unset;
+        background: none;
+        border: none;
+        padding: 0;
+        font: inherit;
+        color: inherit;
+        cursor: pointer;
+        background-color: var(--cor-button);
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: bolder;
+        padding: 1rem;
+        border-radius: var(--borda-arredondamento);
+    }
+
+    .box-background .box-principal-login .box-dados-login input {
+        all: unset;
+        border: none;
+        outline: none;
+        padding: 0;
+        margin: 0;
+        font-size: 1rem;
+        font-weight: bolder;
+        background-color: #fff;
+        border-radius: var(--borda-arredondamento);
+        padding: 1rem;
+    }
+}
 
     @media (min-width:1024px) {
 
@@ -147,4 +201,11 @@
         height: 100vh;
         width: 60vw;
     }
+
+    .box-pagina-inicial .box-pesquisar-minhaLista .box-pesquisar a img {
+        height: 4rem;
+    }
+    
+    
+    
 }
