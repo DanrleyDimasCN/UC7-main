@@ -5,7 +5,7 @@ import Cadastro from "../Pages/Registro/Cadastro";
 import PaginaInicial from "../Pages/Pagina-Inicial/PaginaInicial";
 import Perfil from "../Pages/Perfil/Perfil"
 import Editar from "../Components/Editar/EditarUsuarios";
-import Pesquisar from "../Pages/Pesquisar/Pesquisar";
+import Pesquisar from "../Pages/Pagina-pesquisa/Pesquisar";
 
 export default function NAutenticado() {
     return (

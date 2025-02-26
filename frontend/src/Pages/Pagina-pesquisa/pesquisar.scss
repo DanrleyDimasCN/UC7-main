@@ -1,0 +1,19 @@
+* {
+    body {
+        background-color: var(--cor-principal);
+
+        .box-search-background {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+
+            .box-search-resposta {
+                height: 90vh;
+                width: 90vw;
+                background-color: #fff;
+            }
+    }
+    }
+    
+}

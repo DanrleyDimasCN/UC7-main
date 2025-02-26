@@ -48,7 +48,6 @@ export default function AuthProvider({ children }) {
             
         } catch (err) {
             toast.error('Erro de Comunicação')
-            
         }
     }
 
