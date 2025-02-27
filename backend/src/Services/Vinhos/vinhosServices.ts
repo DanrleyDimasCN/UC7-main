@@ -1,5 +1,5 @@
 import prismaClient from "../../prisma";
-import axios from "axios";
+import axios from 'axios'
 
 interface RegVinhos {
   nome: string;
