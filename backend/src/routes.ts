@@ -29,6 +29,9 @@ router.get('/VerificaToken', estaAutenticado, new LoginUsuariosControllers().ver
 router.post('/CadastrarVinhos', new VinhosControllers().registrar_vinhos)
 router.get('/ConsultarVinhos', new VinhosControllers().consultarVinhos)
 
+// Rota - Pesquisar Vinhos
+router.get('/pesquisa', new VinhosControllers().pesquisarVinhos);
+
 // Rota - Adicionar e consultar Vinhos
 router.post('/AdicionarVinho', new ListaControllers().lista_vinhos)
 router.get('/ConsultarLista', new ListaControllers().consultarVinhos)

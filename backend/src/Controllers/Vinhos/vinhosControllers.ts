@@ -25,6 +25,22 @@ async consultarVinhos(req: Request, res: Response) {
 
     return res.json(resposta)
 }
+
+async pesquisarVinhos(req: Request, res: Response) {
+    const { q } = req.query;
+    if (!q || typeof q !== "string") {
+      return res.status(400).json({ error: "Parâmetro de pesquisa inválido" });
+    }
+
+    const vinhosServices = new VinhosServices();
+    const resposta = await vinhosServices.pesquisarVinhos(q);
+
+    if (resposta.length === 0) {
+      return res.status(404).json({ error: "Nenhum vinho encontrado" });
+    }
+
+    return res.json(resposta);
+  }
 }
 
 export { VinhosControllers }
