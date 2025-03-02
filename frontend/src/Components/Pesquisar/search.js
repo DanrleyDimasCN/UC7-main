@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import api from '../../services/api'
+import axios from 'axios';
 import search from "../../image/logo-search.png";
 
 export default function Search() {
@@ -19,8 +19,15 @@ export default function Search() {
       setError("");
 
       try {
-        const response = await api.get(`/pesquisa?q=${query}`);
-        setResults(response.data);
+
+        // const response = await axios.get('/data/vinhos.json');
+        const response = await axios.get('/vinhos');
+
+        const filteredResults = response.data.filter(vinho =>
+          vinho.nome.toLowerCase().includes(query.toLowerCase())
+        );
+
+        setResults(filteredResults);
       } catch (error) {
         setError("Nenhum vinho encontrado.");
       } finally {

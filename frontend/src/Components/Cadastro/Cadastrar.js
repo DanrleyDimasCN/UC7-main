@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import apiLocal from "../../API/apiLocal"
+import apiLocal from '../../services/api'
 import { toast } from "react-toastify"
 import logo from '../../image/Rectangle11.png'
 import back from '../../image/back.svg'

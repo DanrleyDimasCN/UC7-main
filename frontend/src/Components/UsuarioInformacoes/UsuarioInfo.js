@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { AutenticadoContexto } from "../../Contexts/authContexts";
 import { Link } from "react-router-dom";
-import apiLocal from "../../API/apiLocal";
+import apiLocal from "../../services/api"
 import { toast } from "react-toastify";
 import fotoPerfil from '../../image/foto-perfil.png';
 

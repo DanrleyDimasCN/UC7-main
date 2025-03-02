@@ -1,0 +1,17 @@
+[
+    {
+      "id": 1,
+      "nome": "Merlot",
+      "tipo": "Tinto",
+      "uva": "Merlot",
+      "pais": "França"
+    },
+    {
+      "id": 2,
+      "nome": "Chardonnay",
+      "tipo": "Branco",
+      "uva": "Chardonnay",
+      "pais": "EUA"
+    }
+  ]
+  

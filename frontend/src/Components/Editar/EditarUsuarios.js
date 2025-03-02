@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import apiLocal from "../../API/apiLocal";
+import apiLocal from "../../services/api";
 import { toast } from "react-toastify";
 
 export default function EditarUsuarios() {
