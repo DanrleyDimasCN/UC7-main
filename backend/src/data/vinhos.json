@@ -1,17 +1,993 @@
 [
-    {
-      "id": 1,
-      "nome": "Merlot",
-      "tipo": "Tinto",
-      "uva": "Merlot",
-      "pais": "França"
-    },
-    {
-      "id": 2,
-      "nome": "Chardonnay",
-      "tipo": "Branco",
-      "uva": "Chardonnay",
-      "pais": "EUA"
-    }
-  ]
+  {
+    "id": 1,
+    "nome": "Quinta da Falorca Colheita Selecionada 2016",
+    "tipo": "Tinto",
+    "uva": "Blend de castas portuguesas",
+    "pais": "Portugal",
+    "regiao": "Dão",
+    "descricao": "Um Dão de carteirinha, este vinho destaca-se pela complexidade de seus aromas, realçando notas de frutas silvestres, especiarias além de toques minerais.",
+    "nota": 4.5
+  },
+  {
+    "id": 2,
+    "nome": "Veuve Clicquot Brut",
+    "tipo": "Espumante",
+    "uva": "Pinot Noir, Chardonnay, Pinot Meunier",
+    "pais": "França",
+    "regiao": "Champagne",
+    "descricao": "O Yellow Label expressa a qualidade e estilo da Maison Veuve Clicquot, recriado todos os anos e apoiado na excelência e busca pela perfeição regidos pelo lema de Madame Clicquot: 'Uma só qualidade, a primeiríssima'.",
+    "nota": 4.8
+  },
+  {
+    "id": 3,
+    "nome": "Antico Rosone Montepulciano D’Abruzzo 2020",
+    "tipo": "Tinto",
+    "uva": "Montepulciano",
+    "pais": "Itália",
+    "regiao": "Abruzzo",
+    "descricao": "Monovarietal de tradicional casta italiana, é uma ótima opção para acompanhar carnes vermelhas com preparo mais longo e molhos densos.",
+    "nota": 4.2
+  },
+  {
+    "id": 4,
+    "nome": "Muriel Viñas Viejas Gran Reserva 2011",
+    "tipo": "Tinto",
+    "uva": "Tempranillo",
+    "pais": "Espanha",
+    "regiao": "Rioja",
+    "descricao": "Proveniente de vinhas antigas, este vinho está em um momento sublime para apreciação.",
+    "nota": 4.6
+  },
+  {
+    "id": 5,
+    "nome": "Altos Las Hormigas Malbec Appellation Gualtallary 2019",
+    "tipo": "Tinto",
+    "uva": "Malbec",
+    "pais": "Argentina",
+    "regiao": "Mendoza",
+    "descricao": "Esse rótulo, obra de Osvaldo Chiavazza, artista plástico mendocino, transmite sua impressão sobre o terroir de Gualtallary, determinante para o perfil vibrante deste vinho.",
+    "nota": 4.7
+  },
+  {
+    "id": 6,
+    "nome": "Terrazas de Los Andes Grand Malbec 2018",
+    "tipo": "Tinto",
+    "uva": "Malbec",
+    "pais": "Argentina",
+    "regiao": "Mendoza",
+    "descricao": "Malbec originários de Las Compuertas, Los Chacayes e Altamira compõem com maestria este blend profundo e longevo.",
+    "nota": 4.5
+  },
+  {
+    "id": 7,
+    "nome": "Bouchon Canto Sur Blend 2022",
+    "tipo": "Tinto",
+    "uva": "Carménère, Carignan, País",
+    "pais": "Chile",
+    "regiao": "Vale do Maule",
+    "descricao": "Blend de Carménère, Carignan e País, este tinto revela as características dessas castas antigas do Vale do Maule. Tem aromas florais e de frutas vermelhas frescas, notas herbáceas e de especiarias.",
+    "nota": 4.3
+  },
+  {
+    "id": 8,
+    "nome": "Coyam Cosecha Nº20 Edición Limitada 2021",
+    "tipo": "Tinto",
+    "uva": "Blend de castas",
+    "pais": "Chile",
+    "regiao": "Vale de Colchagua",
+    "descricao": "Mais uma excelente safra deste vinho ícone da Emiliana, representa toda a alma do conceito biodinâmico.",
+    "nota": 4.6
+  },
+  {
+    "id": 9,
+    "nome": "Garzón Reserva Albariño 2023",
+    "tipo": "Branco",
+    "uva": "Albariño",
+    "pais": "Uruguai",
+    "regiao": "Maldonado",
+    "descricao": "Proveniente de vinhedos com baixa produtividade, este Albariño é um dos grandes brancos uruguaios. Merecem destaque suas notas florais de jasmim, frutas cítricas, como grapefruit, e frutas brancas, como pêssegos.",
+    "nota": 4.4
+  },
+  {
+    "id": 10,
+    "nome": "Bouchon Granito Cabernet Sauvignon - Carmenere 2016",
+    "tipo": "Tinto",
+    "uva": "Cabernet Sauvignon, Carménère",
+    "pais": "Chile",
+    "regiao": "Vale do Maule",
+    "descricao": "Este blend elaborado a partir de frutos colhidos manualmente tem aromas de frutas vermelhas e pretas maduras, notas florais, herbáceas e de especiarias, além de toques defumados, tostados e de baunilha.",
+    "nota": 4.5
+  },
+  {
+    "id": 11,
+    "nome": "Arboleda Sauvignon Blanc 2020",
+    "tipo": "Branco",
+    "uva": "Sauvignon Blanc",
+    "pais": "Chile",
+    "regiao": "Vale do Aconcágua",
+    "descricao": "Vinho branco chileno fresco e aromático, com notas de frutas tropicais e cítricas, além de uma acidez vibrante.",
+    "nota": 4.2
+  },
+  {
+    "id": 12,
+    "nome": "Arboleda Carmenere 2020",
+    "tipo": "Tinto",
+    "uva": "Carmenere",
+    "pais": "Chile",
+    "regiao": "Vale do Aconcágua",
+    "descricao": "Este Carmenere apresenta aromas de frutas vermelhas maduras, especiarias e toques herbáceos, com taninos macios e final persistente.",
+    "nota": 4.3
+  },
+  {
+    "id": 13,
+    "nome": "Arboleda Cabernet Sauvignon 2020",
+    "tipo": "Tinto",
+    "uva": "Cabernet Sauvignon",
+    "pais": "Chile",
+    "regiao": "Vale do Aconcágua",
+    "descricao": "Vinho encorpado com notas de cassis, ameixa e toques de pimenta preta, equilibrado por taninos firmes e boa acidez.",
+    "nota": 4.4
+  },
+  {
+    "id": 14,
+    "nome": "Arboleda Syrah 2020",
+    "tipo": "Tinto",
+    "uva": "Syrah",
+    "pais": "Chile",
+    "regiao": "Vale do Aconcágua",
+    "descricao": "Este Syrah destaca-se por seus aromas de frutas negras, especiarias e um leve toque defumado, com taninos sedosos e final longo.",
+    "nota": 4.3
+  },
+  {
+    "id": 15,
+    "nome": "Arboleda Pinot Noir 2020",
+    "tipo": "Tinto",
+    "uva": "Pinot Noir",
+    "pais": "Chile",
+    "regiao": "Vale do Aconcágua",
+    "descricao": "Pinot Noir elegante com notas de cereja, framboesa e sutis toques terrosos, apresentando boa acidez e taninos suaves.",
+    "nota": 4.2
+  },
+  {
+    "id": 16,
+    "nome": "Borsao Zarihs 2018",
+    "tipo": "Tinto",
+    "uva": "Syrah",
+    "pais": "Espanha",
+    "regiao": "Campo de Borja",
+    "descricao": "Vinho potente com aromas de frutas negras maduras, chocolate e especiarias, estruturado e com final persistente.",
+    "nota": 4.5
+  },
+  {
+    "id": 17,
+    "nome": "Poggio Civetta Chianti Classico Riserva 2016",
+    "tipo": "Tinto",
+    "uva": "Sangiovese",
+    "pais": "Itália",
+    "regiao": "Toscana",
+    "descricao": "Chianti clássico com notas de cereja, violeta e toques de tabaco, taninos firmes e acidez equilibrada.",
+    "nota": 4.4
+  },
+  {
+    "id": 18,
+    "nome": "CARM Touriga Nacional 2017",
+    "tipo": "Tinto",
+    "uva": "Touriga Nacional",
+    "pais": "Portugal",
+    "regiao": "Douro",
+    "descricao": "Vinho português elegante com aromas de frutas vermelhas, flores e especiarias, taninos sedosos e boa persistência.",
+    "nota": 4.6
+  },
+  {
+    "id": 19,
+    "nome": "Alma Negra Mistério 2019",
+    "tipo": "Tinto",
+    "uva": "Blend de uvas tintas",
+    "pais": "Argentina",
+    "regiao": "Mendoza",
+    "descricao": "Blend misterioso com notas de frutas negras, especiarias e toques de baunilha, apresentando boa estrutura e equilíbrio.",
+    "nota": 4.3
+  },
+  {
+    "id": 20,
+    "nome": "Catena Alta Cabernet Sauvignon 2018",
+    "tipo": "Tinto",
+    "uva": "Cabernet Sauvignon",
+    "pais": "Argentina",
+    "regiao": "Mendoza",
+    "descricao": "Vinho encorpado com aromas de cassis, pimenta e notas de carvalho, taninos firmes e potencial de envelhecimento.",
+    "nota": 4.7
+  },
+  {
+    "id": 21,
+    "nome": "Stoneburn Pinot Noir 2021",
+    "tipo": "Tinto",
+    "uva": "Pinot Noir",
+    "pais": "Nova Zelândia",
+    "regiao": "Marlborough",
+    "descricao": "Vinho tinto neozelandês elegante, com notas de frutas vermelhas frescas e toques sutis de especiarias.",
+    "nota": 4.3
+  },
+  {
+    "id": 22,
+    "nome": "Trinity Hill Hawke's Bay Chardonnay 2021",
+    "tipo": "Branco",
+    "uva": "Chardonnay",
+    "pais": "Nova Zelândia",
+    "regiao": "Hawke's Bay",
+    "descricao": "Chardonnay fresco e equilibrado, apresentando aromas de frutas cítricas e nuances de carvalho.",
+    "nota": 4.4
+  },
+  {
+    "id": 23,
+    "nome": "Flo Busch Lou Bragalou 2020",
+    "tipo": "Branco",
+    "uva": "Blend de uvas brancas",
+    "pais": "França",
+    "regiao": "Languedoc-Roussillon",
+    "descricao": "Vinho branco francês com notas florais e frutadas, equilibrado e de boa acidez.",
+    "nota": 4.2
+  },
+  {
+    "id": 24,
+    "nome": "Mathilde & Stephen Lou y Es Tu? Beaujolais Villages 2020",
+    "tipo": "Tinto",
+    "uva": "Gamay",
+    "pais": "França",
+    "regiao": "Beaujolais",
+    "descricao": "Beaujolais leve e frutado, com aromas de frutas vermelhas e toques florais.",
+    "nota": 4.1
+  },
+  {
+    "id": 25,
+    "nome": "Clemens Busch VDP. Gutswein Riesling Trocken 2022",
+    "tipo": "Branco",
+    "uva": "Riesling",
+    "pais": "Alemanha",
+    "regiao": "Mosel",
+    "descricao": "Riesling seco com notas de frutas cítricas e minerais, apresentando ótima acidez.",
+    "nota": 4.5
+  },
+  {
+    "id": 26,
+    "nome": "Chéreau-Carré Le Clos du Château L'Oiselinière Sèvre Et Maine 2016",
+    "tipo": "Branco",
+    "uva": "Melon de Bourgogne",
+    "pais": "França",
+    "regiao": "Loire",
+    "descricao": "Vinho branco elegante com notas de frutas brancas e toques minerais, típico da região do Loire.",
+    "nota": 4.3
+  },
+  {
+    "id": 27,
+    "nome": "Domaine Collet et Fils Petit Chablis 2022",
+    "tipo": "Branco",
+    "uva": "Chardonnay",
+    "pais": "França",
+    "regiao": "Borgonha",
+    "descricao": "Chablis fresco e mineral, com aromas de frutas cítricas e flores brancas.",
+    "nota": 4.4
+  },
+  {
+    "id": 28,
+    "nome": "Viña Ane Centenaria DOC Rioja 2021",
+    "tipo": "Branco",
+    "uva": "Viura",
+    "pais": "Espanha",
+    "regiao": "Rioja",
+    "descricao": "Vinho branco espanhol com notas de frutas de caroço e leve toque de baunilha.",
+    "nota": 4.2
+  },
+  {
+    "id": 29,
+    "nome": "Domaine Robert Gibourg Côteaux Bourguignons 2020",
+    "tipo": "Tinto",
+    "uva": "Gamay, Pinot Noir",
+    "pais": "França",
+    "regiao": "Borgonha",
+    "descricao": "Blend tinto leve e frutado, com notas de cereja e framboesa, típico da Borgonha.",
+    "nota": 4.3
+  },
+  {
+    "id": 30,
+    "nome": "Clos Bellane Côtes-du-Rhône Valréas Blanc 2023",
+    "tipo": "Branco",
+    "uva": "Blend de uvas brancas",
+    "pais": "França",
+    "regiao": "Côtes-du-Rhône",
+    "descricao": "Vinho branco aromático com notas de frutas tropicais e flores brancas, equilibrado e fresco.",
+    "nota": 4.4
+  },
+  {
+    "id": 31,
+    "nome": "Fabrice Dodane Du Quin Quin Le Dos d'Chat Rouge 2020",
+    "tipo": "Tinto",
+    "uva": "Pinot Noir",
+    "pais": "França",
+    "regiao": "Jura",
+    "descricao": "Vinho tinto elegante com notas de frutas vermelhas e toques terrosos, típico da região de Jura.",
+    "nota": 4.5
+  },
+  {
+    "id": 32,
+    "nome": "Ostler Waitaki Valley Otago Pinot Noir 2018",
+    "tipo": "Tinto",
+    "uva": "Pinot Noir",
+    "pais": "Nova Zelândia",
+    "regiao": "Waitaki Valley",
+    "descricao": "Pinot Noir neozelandês com aromas de cereja, framboesa e sutis notas de especiarias.",
+    "nota": 4.6
+  },
+  {
+    "id": 33,
+    "nome": "Nino Negri Mazer Inferno 2011",
+    "tipo": "Tinto",
+    "uva": "Nebbiolo",
+    "pais": "Itália",
+    "regiao": "Lombardia",
+    "descricao": "Vinho italiano com notas de frutas vermelhas maduras, flores secas e toques de especiarias.",
+    "nota": 4.5
+  },
+  {
+    "id": 34,
+    "nome": "Nino Negri Vigneto Fracia 2011",
+    "tipo": "Tinto",
+    "uva": "Nebbiolo",
+    "pais": "Itália",
+    "regiao": "Lombardia",
+    "descricao": "Nebbiolo elegante com aromas de frutas vermelhas, alcaçuz e notas terrosas.",
+    "nota": 4.6
+  },
+  {
+    "id": 36,
+    "nome": "Montes Alpha Cabernet Sauvignon 2020",
+    "tipo": "Tinto",
+    "uva": "Cabernet Sauvignon",
+    "pais": "Chile",
+    "regiao": "Vale de Colchagua",
+    "descricao": "Vinho encorpado com aromas de frutas negras, especiarias e notas de baunilha, com taninos maduros e final persistente.",
+    "nota": 4.4
+  },
+  {
+    "id": 37,
+    "nome": "Salentein Reserve Malbec 2021",
+    "tipo": "Tinto",
+    "uva": "Malbec",
+    "pais": "Argentina",
+    "regiao": "Vale do Uco, Mendoza",
+    "descricao": "Malbec estruturado com notas de ameixa, amoras e toques de chocolate e baunilha, taninos macios e final longo.",
+    "nota": 4.5
+  },
+  {
+    "id": 38,
+    "nome": "Concha Y Toro Marques de Casa Concha Chardonnay 2021",
+    "tipo": "Branco",
+    "uva": "Chardonnay",
+    "pais": "Chile",
+    "regiao": "Vale do Limarí",
+    "descricao": "Chardonnay com bom equilíbrio entre fruta e madeira, com notas de abacaxi, baunilha e toques minerais.",
+    "nota": 4.3
+  },
+  {
+    "id": 39,
+    "nome": "Luigi Bosca Malbec 2020",
+    "tipo": "Tinto",
+    "uva": "Malbec",
+    "pais": "Argentina",
+    "regiao": "Mendoza",
+    "descricao": "Malbec clássico argentino, com aromas de frutas negras, violeta e toques de carvalho, taninos redondos e elegantes.",
+    "nota": 4.5
+  },
+  {
+    "id": 40,
+    "nome": "Esporão Reserva Tinto 2020",
+    "tipo": "Tinto",
+    "uva": "Aragonez, Trincadeira, Alicante Bouschet",
+    "pais": "Portugal",
+    "regiao": "Alentejo",
+    "descricao": "Blend português intenso, com notas de frutas vermelhas, especiarias e leve toque defumado, com bom potencial de guarda.",
+    "nota": 4.6
+  },
+  {
+    "id": 41,
+    "nome": "Château Les Trois Croix 2016",
+    "tipo": "Tinto",
+    "uva": "Merlot, Cabernet Franc",
+    "pais": "França",
+    "regiao": "Bordeaux",
+    "descricao": "Bordeaux equilibrado, com notas de frutas escuras, couro e baunilha, taninos estruturados e elegantes.",
+    "nota": 4.4
+  },
+  {
+    "id": 42,
+    "nome": "Crios Torrontés 2022",
+    "tipo": "Branco",
+    "uva": "Torrontés",
+    "pais": "Argentina",
+    "regiao": "Salta",
+    "descricao": "Vinho branco aromático e floral, com notas de pêssego, lichia e um toque cítrico, final refrescante.",
+    "nota": 4.3
+  },
+  {
+    "id": 43,
+    "nome": "Carm Douro Reserva 2019",
+    "tipo": "Tinto",
+    "uva": "Touriga Nacional, Touriga Franca, Tinta Roriz",
+    "pais": "Portugal",
+    "regiao": "Douro",
+    "descricao": "Blend do Douro intenso, com notas de frutas maduras, especiarias e madeira bem integrada, final longo e harmonioso.",
+    "nota": 4.6
+  },
+  {
+    "id": 44,
+    "nome": "Viña Cobos Felino Malbec 2021",
+    "tipo": "Tinto",
+    "uva": "Malbec",
+    "pais": "Argentina",
+    "regiao": "Mendoza",
+    "descricao": "Malbec elegante e suculento, com notas de cereja preta, violeta e leve toque de baunilha.",
+    "nota": 4.5
+  },
+  {
+    "id": 45,
+    "nome": "J. Lohr Seven Oaks Cabernet Sauvignon 2019",
+    "tipo": "Tinto",
+    "uva": "Cabernet Sauvignon",
+    "pais": "EUA",
+    "regiao": "Califórnia",
+    "descricao": "Vinho americano com aromas de frutas escuras maduras, tabaco e baunilha, encorpado e persistente.",
+    "nota": 4.4
+  },
+  {
+    "id": 46,
+    "nome": "Biscardo Neropasso Rosso Veneto 2017",
+    "tipo": "Tinto",
+    "uva": "Corvina, Corvinone, Merlot",
+    "pais": "Itália",
+    "regiao": "Vêneto",
+    "descricao": "Blend típico do Vêneto, utilizando o método apassimento, resultando em aromas de frutas em compota, como ameixa e cereja. Em boca, é amplo, com taninos macios.",
+    "nota": 4.5
+  },
+  {
+    "id": 47,
+    "nome": "Lupo Meraviglia Due di Due Rosso di Puglia 2018",
+    "tipo": "Tinto",
+    "uva": "Negroamaro, Malvasia Nera",
+    "pais": "Itália",
+    "regiao": "Puglia",
+    "descricao": "Vinho com 97 pontos de Luca Maroni, apresenta aromas de frutos silvestres, como cassis e groselha. Em boca, é amplo, com toques balsâmicos, boa estrutura e taninos bem domados.",
+    "nota": 4.7
+  },
+  {
+    "id": 48,
+    "nome": "Jean Babou Elégance Crémant de Limoux AOC Brut",
+    "tipo": "Espumante",
+    "uva": "Blend de uvas brancas",
+    "pais": "França",
+    "regiao": "Limoux",
+    "descricao": "Espumante elaborado pelo método Champenoise, com notas cítricas e de frutas brancas, como maçã verde e abacaxi. Possui bela acidez e revela frutas secas e elementos tostados no final.",
+    "nota": 4.6
+  },
+  {
+    "id": 49,
+    "nome": "Prosper Maufoux Mâcon Rouge Domaine de Ruère AOC 2018",
+    "tipo": "Tinto",
+    "uva": "Pinot Noir",
+    "pais": "França",
+    "regiao": "Borgonha",
+    "descricao": "Tinto da Borgonha com aromas florais e de frutas negras, característicos do Pinot Noir. Em boca, é equilibrado e elegante, com belo final.",
+    "nota": 4.4
+  },
+  {
+    "id": 50,
+    "nome": "Secrets de Mar Terra Alta D.O. 2017",
+    "tipo": "Tinto",
+    "uva": "Carignan, Garnacha, Syrah, Cabernet Sauvignon",
+    "pais": "Espanha",
+    "regiao": "Catalunha",
+    "descricao": "Blend de vinhas velhas que revela frutos negros e vermelhos com toques de especiarias. Na boca, apresenta grande frescor, taninos aveludados e boa persistência.",
+    "nota": 4.5
+  },
+  {
+    "id": 51,
+    "nome": "Angel de Larrainzar Navarra D.O. 2017",
+    "tipo": "Tinto",
+    "uva": "Blend de uvas tintas",
+    "pais": "Espanha",
+    "regiao": "Navarra",
+    "descricao": "Vinho encorpado e frutado com aromas de frutos negros, toques florais e de especiarias. Em boca, traz taninos firmes, boa acidez e longa persistência.",
+    "nota": 4.6
+  },
+  {
+    "id": 52,
+    "nome": "Lenz Moser Selection Grüner Veltliner 2018",
+    "tipo": "Branco",
+    "uva": "Grüner Veltliner",
+    "pais": "Áustria",
+    "regiao": "Niederösterreich",
+    "descricao": "Vinho com aromas cítricos e de frutas brancas, com nuances herbáceas. Em boca, demonstra excelente frescor.",
+    "nota": 4.3
+  },
+  {
+    "id": 53,
+    "nome": "Patamar Reserva 2015",
+    "tipo": "Tinto",
+    "uva": "Blend de uvas portuguesas",
+    "pais": "Portugal",
+    "regiao": "Lisboa",
+    "descricao": "Vinho com complexidade de aromas, revelando frutas vermelhas, chocolate e especiarias como cravo. Na boca, traz taninos firmes, boa estrutura e persistência.",
+    "nota": 4.5
+  },
+  {
+    "id": 54,
+    "nome": "Château d'Angles Classique La Clape AOC 2015",
+    "tipo": "Tinto",
+    "uva": "Syrah, Grenache, Mourvèdre",
+    "pais": "França",
+    "regiao": "Languedoc",
+    "descricao": "Vinho expressivo de alta complexidade, com aromas de frutas e especiarias, resultante da mescla das uvas Syrah, Grenache e Mourvèdre.",
+    "nota": 4.6
+  },
+  {
+    "id": 55,
+    "nome": "Cockburn’s Nº 1 Special Reserve Port",
+    "tipo": "Fortificado",
+    "uva": "Blend de uvas portuguesas",
+    "pais": "Portugal",
+    "regiao": "Douro",
+    "descricao": "Porto que oscila entre aromas expressivos de frutas vermelhas e a elegância trazida pelo estágio em madeira, manifestando-se em notas de especiarias no nariz e em um palato macio, fresco e frutado.",
+    "nota": 4.7
+  },
+  {
+    "id": 56,
+    "nome": "Casillero del Diablo Reserva Cabernet Sauvignon",
+    "tipo": "Tinto",
+    "uva": "Cabernet Sauvignon",
+    "pais": "Chile",
+    "regiao": "Vale do Maipo",
+    "descricao": "Vinho tinto chileno com aromas de frutas vermelhas maduras e especiarias. Possui boa estrutura e taninos suaves.",
+    "nota": 4.5
+  },
+  {
+    "id": 57,
+    "nome": "Miolo Reserva Merlot",
+    "tipo": "Tinto",
+    "uva": "Merlot",
+    "pais": "Brasil",
+    "regiao": "Vale dos Vinhedos",
+    "descricao": "Merlot brasileiro de bom corpo, com aromas de frutas vermelhas e leves toques de baunilha, suave e equilibrado.",
+    "nota": 4.4
+  },
+  {
+    "id": 58,
+    "nome": "Alamos Malbec",
+    "tipo": "Tinto",
+    "uva": "Malbec",
+    "pais": "Argentina",
+    "regiao": "Mendoza",
+    "descricao": "Malbec argentino com aromas de ameixa, cereja e notas de carvalho. Tem boa acidez e final persistente.",
+    "nota": 4.6
+  },
+  {
+    "id": 59,
+    "nome": "Salton Classic Brut",
+    "tipo": "Espumante",
+    "uva": "Blend de uvas brancas",
+    "pais": "Brasil",
+    "regiao": "Rio Grande do Sul",
+    "descricao": "Espumante brasileiro com notas de frutas cítricas, maçã verde e um toque delicado de brioche, fresco e leve.",
+    "nota": 4.4
+  },
+  {
+    "id": 60,
+    "nome": "Pizzato Pinot Noir",
+    "tipo": "Tinto",
+    "uva": "Pinot Noir",
+    "pais": "Brasil",
+    "regiao": "Vale dos Vinhedos",
+    "descricao": "Vinho tinto de corpo leve, com aromas de frutas vermelhas frescas, como morango e framboesa, e leve toque floral.",
+    "nota": 4.3
+  },
+  {
+    "id": 61,
+    "nome": "Concha y Toro Casillero del Diablo Reserva Sauvignon Blanc",
+    "tipo": "Branco",
+    "uva": "Sauvignon Blanc",
+    "pais": "Chile",
+    "regiao": "Vale Central",
+    "descricao": "Sauvignon Blanc chileno com aromas de frutas tropicais e ervas frescas, acidez equilibrada e refrescante.",
+    "nota": 4.5
+  },
+  {
+    "id": 62,
+    "nome": "Perini Prosecco",
+    "tipo": "Espumante",
+    "uva": "Glera",
+    "pais": "Brasil",
+    "regiao": "Espírito Santo",
+    "descricao": "Prosecco brasileiro com notas de maçã verde, pêssego e leve acidez, muito refrescante e fácil de beber.",
+    "nota": 4.4
+  },
+  {
+    "id": 63,
+    "nome": "Terrazas de los Andes Reserva Malbec",
+    "tipo": "Tinto",
+    "uva": "Malbec",
+    "pais": "Argentina",
+    "regiao": "Mendoza",
+    "descricao": "Malbec argentino de boa complexidade, com aromas de frutas vermelhas maduras, especiarias e toque de baunilha.",
+    "nota": 4.6
+  },
+  {
+    "id": 64,
+    "nome": "Cava Gossips Brut",
+    "tipo": "Espumante",
+    "uva": "Macabeo, Xarel-lo, Parellada",
+    "pais": "Espanha",
+    "regiao": "Catalunha",
+    "descricao": "Cava fresco e equilibrado, com aromas de frutas cítricas e florais, perfeito para momentos de celebração.",
+    "nota": 4.5
+  },
+  {
+    "id": 65,
+    "nome": "Viu Manent Gran Reserva Carmenère",
+    "tipo": "Tinto",
+    "uva": "Carmenère",
+    "pais": "Chile",
+    "regiao": "Colchagua Valley",
+    "descricao": "Carmenère chileno com aromas de pimenta preta, frutas vermelhas e um toque de chocolate amargo, encorpado e macio.",
+    "nota": 4.6
+  },
+  {
+    "id": 66,
+    "nome": "Vinho Miolo Reserva Cabernet Sauvignon",
+    "tipo": "Tinto",
+    "uva": "Cabernet Sauvignon",
+    "pais": "Brasil",
+    "regiao": "Vale dos Vinhedos",
+    "descricao": "Cabernet Sauvignon brasileiro com aromas de frutas negras, como cassis e ameixa, acompanhados de toques de especiarias, com taninos suaves e boa estrutura.",
+    "nota": 4.4
+  },
+  {
+    "id": 67,
+    "nome": "Casa Mayor Gran Reserva Merlot",
+    "tipo": "Tinto",
+    "uva": "Merlot",
+    "pais": "Chile",
+    "regiao": "Vale do Maule",
+    "descricao": "Merlot chileno de grande qualidade, com aromas de frutas vermelhas maduras, chocolate e leves toques de especiarias. Na boca, é equilibrado, com taninos suaves e final agradável.",
+    "nota": 4.5
+  },
+  {
+    "id": 68,
+    "nome": "Lindemans Bin 65 Chardonnay",
+    "tipo": "Branco",
+    "uva": "Chardonnay",
+    "pais": "Austrália",
+    "regiao": "South Eastern Australia",
+    "descricao": "Chardonnay australiano fresco e frutado, com notas de maçã verde, pêssego e um toque de baunilha. É leve, com boa acidez e final frutado.",
+    "nota": 4.3
+  },
+  {
+    "id": 69,
+    "nome": "Gato Negro Cabernet Sauvignon",
+    "tipo": "Tinto",
+    "uva": "Cabernet Sauvignon",
+    "pais": "Chile",
+    "regiao": "Valle Central",
+    "descricao": "Vinho tinto chileno, fácil de beber, com aromas de frutas vermelhas maduras e especiarias. Tem bom corpo e um final suave.",
+    "nota": 4.2
+  },
+  {
+    "id": 70,
+    "nome": "Chandon Brut",
+    "tipo": "Espumante",
+    "uva": "Pinot Noir, Chardonnay",
+    "pais": "Brasil",
+    "regiao": "Serra Gaúcha",
+    "descricao": "Espumante de qualidade, elaborado pelo método tradicional, com notas de frutas cítricas, maçã verde e toques de brioche. Refrescante e perfeito para celebrações.",
+    "nota": 4.6
+  },
+  {
+    "id": 71,
+    "nome": "Pizzatto Viognier",
+    "tipo": "Branco",
+    "uva": "Viognier",
+    "pais": "Brasil",
+    "regiao": "Vale dos Vinhedos",
+    "descricao": "Vinho branco com aromas intensos de frutas tropicais, como manga e abacaxi, e um toque floral. Em boca, é fresco e equilibrado.",
+    "nota": 4.3
+  },
+  {
+    "id": 72,
+    "nome": "Bodega Norton Reserva Malbec",
+    "tipo": "Tinto",
+    "uva": "Malbec",
+    "pais": "Argentina",
+    "regiao": "Mendoza",
+    "descricao": "Malbec argentino de grande expressão, com notas de frutas negras maduras, especiarias e leve toque de baunilha, taninos firmes e bom final.",
+    "nota": 4.6
+  },
+  {
+    "id": 73,
+    "nome": "Terras do Sul Sauvignon Blanc",
+    "tipo": "Branco",
+    "uva": "Sauvignon Blanc",
+    "pais": "Brasil",
+    "regiao": "Rio Grande do Sul",
+    "descricao": "Sauvignon Blanc brasileiro com aromas frescos de frutas cítricas, como limão e maracujá, e um toque herbal, boa acidez e final refrescante.",
+    "nota": 4.4
+  },
+  {
+    "id": 74,
+    "nome": "Concha y Toro Marques de Casa Concha Cabernet Sauvignon",
+    "tipo": "Tinto",
+    "uva": "Cabernet Sauvignon",
+    "pais": "Chile",
+    "regiao": "Vale do Maipo",
+    "descricao": "Cabernet Sauvignon de grande qualidade, com aromas de frutas vermelhas maduras, como cassis, e notas de especiarias e baunilha. Corpo estruturado e taninos elegantes.",
+    "nota": 4.7
+  },
+  {
+    "id": 75,
+    "nome": "Casa Mayor Gran Reserva Carmenère",
+    "tipo": "Tinto",
+    "uva": "Carmenère",
+    "pais": "Chile",
+    "regiao": "Vale Central",
+    "descricao": "Carmenère chileno de aromas complexos de frutas vermelhas, especiarias e toques de pimenta preta. Em boca, é equilibrado, com taninos suaves e final longo.",
+    "nota": 4.6
+  },
+  {
+    "id": 76,
+    "nome": "Frei João Reserva Tinto",
+    "tipo": "Tinto",
+    "uva": "Touriga Nacional, Aragonez, Syrah",
+    "pais": "Portugal",
+    "regiao": "Alentejo",
+    "descricao": "Blend de vinhos portugueses, com notas de frutas vermelhas maduras e especiarias, estrutura robusta e taninos suaves.",
+    "nota": 4.5
+  },
+  {
+    "id": 77,
+    "nome": "Gato Negro Sauvignon Blanc",
+    "tipo": "Branco",
+    "uva": "Sauvignon Blanc",
+    "pais": "Chile",
+    "regiao": "Vale Central",
+    "descricao": "Vinho chileno fresco e leve, com notas de frutas tropicais e toques herbáceos. Boa acidez e final refrescante.",
+    "nota": 4.3
+  },
+  {
+    "id": 78,
+    "nome": "Miolo Cuvée Tradition Brut",
+    "tipo": "Espumante",
+    "uva": "Pinot Noir, Chardonnay",
+    "pais": "Brasil",
+    "regiao": "Serra Gaúcha",
+    "descricao": "Espumante elaborado pelo método tradicional, com notas de maçã verde, pêssego e brioche. Fresco e de boa acidez.",
+    "nota": 4.6
+  },
+  {
+    "id": 79,
+    "nome": "Norton Malbec",
+    "tipo": "Tinto",
+    "uva": "Malbec",
+    "pais": "Argentina",
+    "regiao": "Mendoza",
+    "descricao": "Malbec argentino com aromas de frutas vermelhas maduras e um toque de carvalho. Em boca, taninos suaves e boa estrutura.",
+    "nota": 4.4
+  },
+  {
+    "id": 80,
+    "nome": "Vinho Terra Nova Cabernet Sauvignon",
+    "tipo": "Tinto",
+    "uva": "Cabernet Sauvignon",
+    "pais": "Brasil",
+    "regiao": "São Joaquim",
+    "descricao": "Cabernet Sauvignon nacional com aromas de frutas negras e toques de pimenta. Possui boa acidez e taninos elegantes.",
+    "nota": 4.5
+  },
+  {
+    "id": 81,
+    "nome": "Valmarino Sauvignon Blanc",
+    "tipo": "Branco",
+    "uva": "Sauvignon Blanc",
+    "pais": "Brasil",
+    "regiao": "Serra Gaúcha",
+    "descricao": "Sauvignon Blanc brasileiro com aromas frescos de frutas tropicais, como maracujá, e um toque herbal. Refrescante e leve.",
+    "nota": 4.4
+  },
+  {
+    "id": 82,
+    "nome": "Vinho Cordelier Merlot",
+    "tipo": "Tinto",
+    "uva": "Merlot",
+    "pais": "Brasil",
+    "regiao": "Vale dos Vinhedos",
+    "descricao": "Merlot nacional com aromas de frutas vermelhas maduras e especiarias. Corpo médio e taninos suaves.",
+    "nota": 4.2
+  },
+  {
+    "id": 83,
+    "nome": "Chandon Excellence Brut",
+    "tipo": "Espumante",
+    "uva": "Pinot Noir, Chardonnay",
+    "pais": "Brasil",
+    "regiao": "Serra Gaúcha",
+    "descricao": "Espumante brut com aromas de frutas frescas e brioche. Acidez vibrante e final longo, ideal para celebrações.",
+    "nota": 4.7
+  },
+  {
+    "id": 84,
+    "nome": "Alma Terra Reserva Pinot Noir",
+    "tipo": "Tinto",
+    "uva": "Pinot Noir",
+    "pais": "Brasil",
+    "regiao": "Serra Gaúcha",
+    "descricao": "Pinot Noir brasileiro com aromas de frutas vermelhas frescas e notas florais. Em boca, é leve e fresco, com taninos delicados.",
+    "nota": 4.3
+  },
+  {
+    "id": 85,
+    "nome": "Vinhedos de Pedra Tannat",
+    "tipo": "Tinto",
+    "uva": "Tannat",
+    "pais": "Brasil",
+    "regiao": "Uruguai",
+    "descricao": "Tannat uruguaio com aromas de frutas negras e notas de especiarias. Vinho encorpado, com taninos firmes e boa acidez.",
+    "nota": 4.5
+  },
+  {
+    "id": 86,
+    "nome": "Casillero del Diablo Reserva Carmenère",
+    "tipo": "Tinto",
+    "uva": "Carmenère",
+    "pais": "Chile",
+    "regiao": "Vale do Maipo",
+    "descricao": "Vinho tinto chileno com aromas de frutas vermelhas, pimenta preta e chocolate. Taninos suaves e boa estrutura.",
+    "nota": 4.5
+  },
+  {
+    "id": 87,
+    "nome": "Miolo Lote 43",
+    "tipo": "Tinto",
+    "uva": "Cabernet Sauvignon, Merlot",
+    "pais": "Brasil",
+    "regiao": "Vale dos Vinhedos",
+    "descricao": "Blend de Cabernet Sauvignon e Merlot, com aromas de frutas vermelhas maduras e toques de baunilha. Vinho encorpado e bem equilibrado.",
+    "nota": 4.6
+  },
+  {
+    "id": 88,
+    "nome": "Almadén Cabernet Sauvignon",
+    "tipo": "Tinto",
+    "uva": "Cabernet Sauvignon",
+    "pais": "Chile",
+    "regiao": "Valle Central",
+    "descricao": "Cabernet Sauvignon chileno de boa relação custo-benefício, com aromas de frutas negras e especiarias. Boa estrutura e taninos macios.",
+    "nota": 4.2
+  },
+  {
+    "id": 89,
+    "nome": "Vinhedos de Pedra Chardonnay",
+    "tipo": "Branco",
+    "uva": "Chardonnay",
+    "pais": "Brasil",
+    "regiao": "Serra Gaúcha",
+    "descricao": "Chardonnay brasileiro com aromas de frutas tropicais e notas de baunilha. Leve e refrescante, com bom equilíbrio de acidez.",
+    "nota": 4.4
+  },
+  {
+    "id": 90,
+    "nome": "Lidio Carraro Grande Vindima Merlot",
+    "tipo": "Tinto",
+    "uva": "Merlot",
+    "pais": "Brasil",
+    "regiao": "Vale dos Vinhedos",
+    "descricao": "Merlot de grande expressão, com aromas de frutas vermelhas maduras, especiarias e leve toque de carvalho. Taninos firmes e final longo.",
+    "nota": 4.7
+  },
+  {
+    "id": 91,
+    "nome": "Bodega Catena Zapata Malbec",
+    "tipo": "Tinto",
+    "uva": "Malbec",
+    "pais": "Argentina",
+    "regiao": "Mendoza",
+    "descricao": "Malbec de alta qualidade com aromas de frutas negras, especiarias e toques de baunilha. Em boca, é encorpado, com taninos macios e final persistente.",
+    "nota": 4.8
+  },
+  {
+    "id": 92,
+    "nome": "Salton Volpi Cabernet Sauvignon",
+    "tipo": "Tinto",
+    "uva": "Cabernet Sauvignon",
+    "pais": "Brasil",
+    "regiao": "Vale dos Vinhedos",
+    "descricao": "Vinho tinto brasileiro com aromas de frutas vermelhas e especiarias. Corpo médio, com taninos suaves e boa acidez.",
+    "nota": 4.4
+  },
+  {
+    "id": 93,
+    "nome": "Casillero del Diablo Reserva Sauvignon Blanc",
+    "tipo": "Branco",
+    "uva": "Sauvignon Blanc",
+    "pais": "Chile",
+    "regiao": "Vale Central",
+    "descricao": "Sauvignon Blanc chileno fresco, com aromas de frutas tropicais e ervas frescas. Refrescante e leve, com boa acidez.",
+    "nota": 4.5
+  },
+  {
+    "id": 94,
+    "nome": "Concha y Toro Marques de Casa Concha Chardonnay",
+    "tipo": "Branco",
+    "uva": "Chardonnay",
+    "pais": "Chile",
+    "regiao": "Vale do Casablanca",
+    "descricao": "Chardonnay chileno de alta qualidade, com aromas de frutas tropicais e toques de manteiga e baunilha. Encorpado e bem equilibrado.",
+    "nota": 4.7
+  },
+  {
+    "id": 95,
+    "nome": "Frei João Seleção Branco",
+    "tipo": "Branco",
+    "uva": "Antão Vaz, Arinto, Verdelho",
+    "pais": "Portugal",
+    "regiao": "Alentejo",
+    "descricao": "Vinho branco português com aromas de frutas cítricas e flores brancas. Leve e fresco, com acidez bem equilibrada.",
+    "nota": 4.3
+  },
+  {
+    "id": 96,
+    "nome": "Vino de la Tierra Tempranillo",
+    "tipo": "Tinto",
+    "uva": "Tempranillo",
+    "pais": "Espanha",
+    "regiao": "La Mancha",
+    "descricao": "Vinho espanhol com aromas de frutas vermelhas maduras e notas de especiarias. Corpo médio e taninos suaves.",
+    "nota": 4.4
+  },
+  {
+    "id": 97,
+    "nome": "Concha y Toro Gran Reserva Serie Riberas Sauvignon Blanc",
+    "tipo": "Branco",
+    "uva": "Sauvignon Blanc",
+    "pais": "Chile",
+    "regiao": "Vale do Maule",
+    "descricao": "Sauvignon Blanc chileno de grande qualidade, com notas cítricas e herbáceas, refrescante e com acidez bem marcada.",
+    "nota": 4.6
+  },
+  {
+    "id": 98,
+    "nome": "Vinho Alamos Chardonnay",
+    "tipo": "Branco",
+    "uva": "Chardonnay",
+    "pais": "Argentina",
+    "regiao": "Mendoza",
+    "descricao": "Chardonnay argentino com aromas de frutas tropicais e toques de baunilha. Leve, com boa acidez e final fresco.",
+    "nota": 4.4
+  },
+  {
+    "id": 99,
+    "nome": "Pizzato Cabernet Sauvignon",
+    "tipo": "Tinto",
+    "uva": "Cabernet Sauvignon",
+    "pais": "Brasil",
+    "regiao": "Vale dos Vinhedos",
+    "descricao": "Cabernet Sauvignon nacional com aromas de frutas vermelhas maduras e especiarias. Corpo médio, com taninos suaves e bom final.",
+    "nota": 4.3
+  },
+  {
+    "id": 100,
+    "nome": "Miolo Sparkling Brut",
+    "tipo": "Espumante",
+    "uva": "Pinot Noir, Chardonnay",
+    "pais": "Brasil",
+    "regiao": "Serra Gaúcha",
+    "descricao": "Espumante brasileiro leve e refrescante, com aromas de frutas cítricas e maçã verde, boa acidez e final elegante.",
+    "nota": 4.6
+  }
+]
   

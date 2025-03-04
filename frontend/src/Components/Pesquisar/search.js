@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
+import api from "../../services/api";
 import search from "../../image/logo-search.png";
-
+import cordero_malbec from '../../image/cordero-malbec.png'
 export default function Search() {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
@@ -19,9 +19,7 @@ export default function Search() {
       setError("");
 
       try {
-
-        // const response = await axios.get('/data/vinhos.json');
-        const response = await axios.get('/vinhos');
+        const response = await api.get('/data/vinhos.json');
 
         const filteredResults = response.data.filter(vinho =>
           vinho.nome.toLowerCase().includes(query.toLowerCase())
@@ -55,16 +53,20 @@ export default function Search() {
         </div>
       </form>
 
-      {loading && <p>Carregando...</p>}
-      {error && <p>{error}</p>}
-
-      <ul className="results-list">
-        {results.map((vinho) => (
-          <li key={vinho.id}>
-            <strong>{vinho.nome}</strong> - {vinho.tipo}
-          </li>
-        ))}
-      </ul>
+      <div className="box-search-resposta">
+  
+        {loading && <p>Carregando...</p>}
+        {error && <p>{error}</p>}
+  
+        <ul className="results-list">
+          {results.map((vinho) => (
+            <li key={vinho.id}>
+              <img src={cordero_malbec} alt="" />
+              <strong>{vinho.nome}</strong> - {vinho.tipo}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

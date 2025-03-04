@@ -9,11 +9,11 @@ app.use(cors())
 app.use(express.json())
 app.use(router)
 
-// app.use('/data', express.static(path.join(__dirname, 'data')));
+app.use('/data', express.static(path.join(__dirname, 'data')));
 
-app.get('/vinhos', (req: Request, res: Response) => {
-    res.sendFile(path.join(__dirname, 'data', 'vinhos.json'));
-  });
+// app.get('/vinhos', (req: Request, res: Response) => {
+//     res.sendFile(path.join(__dirname, 'data', 'vinhos.json'));
+//   });
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     if (err instanceof Error) {
