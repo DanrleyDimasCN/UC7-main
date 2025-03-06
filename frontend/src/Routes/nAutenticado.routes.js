@@ -6,6 +6,7 @@ import PaginaInicial from "../Pages/Pagina-Inicial/PaginaInicial";
 import Perfil from "../Pages/Perfil/Perfil"
 import Editar from "../Components/Editar/EditarUsuarios";
 import Pesquisar from "../Pages/Pagina-pesquisa/Pesquisar";
+import PageVinhoInfo from "../Pages/Vinho/PageVinhoInfo";
 
 export default function NAutenticado() {
     return (
@@ -17,6 +18,7 @@ export default function NAutenticado() {
                 <Route path="/paginaInical" element={<PaginaInicial/>}/>
                 <Route path="/EditarUsuarios/:id" element={<Editar/>} />
                 <Route path="/pesquisar" element={<Pesquisar/>} />
+                <Route path="/vinhoInformacoes" element={<PageVinhoInfo/>} />
 
                 <Route path="*" element={<Inicio/>} />
             </Routes>

@@ -15,33 +15,81 @@
         gap: 1rem;
 
         .box-search-resposta {
-            height: 85vh;
+            height: 90vh;
             width: 90vw;
             overflow-y: auto;
             scrollbar-width: none;
             display: flex;
+            align-items: baseline;
             background-color: #fff;
             border-radius: var(--borda-arredondamento);
            
 
             .results-list {
-                height: 80vh;
                 width: 90vw;
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 2rem;
                 border-radius: var(--borda-arredondamento);
-                
 
                 li {
-                    width: 10rem;
-                    margin: .5rem 0rem 0rem .5rem;
-                    display: flex;
-                    gap: .5rem;
-                    img {
                     height: 6rem;
+                    width: 85vw;
+                    display: flex;
+                    gap: 1rem;
+                    margin: 1rem 0rem 2rem .6rem;
+       
+
+                    .box-vinho {
+                            height: 7rem;
+                            display: flex;
+                            justify-content: space-between;
+                            flex-direction: column;
+                            gap: .2rem;
+
+                            :nth-child(3) {
+                                font-style: italic;
+                                font-weight: 400;
+                            }
+                    }
+
+                    p {
+                        font-family: var(--font-nome-vinho);
+                        font-size: .9rem;
+                        font-weight: 500;
+                    }
+                    img {
+                    height: 7rem;
+                    width: 6rem;
+                    box-shadow: 3px 3px 8px 0px;
                     border-radius: var(--borda-arredondamento);
+                }
+
+                .box-vinho-info-add {
+
+                        a {
+                            display: flex;
+                            align-items: flex-end;
+                            gap: .5rem;
+                            text-decoration: none;
+                            user-select: none;
+                            outline: none; 
+                            box-shadow: none;
+                            background: transparent; 
+                            color: inherit;
+                            font-family: Arial, Helvetica, sans-serif;
+                            color: #000000a4;
+                            font-weight: 100;
+                            font-style: italic;
+                        }
+
+                    img {
+                        box-shadow: none;
+                        border: none;
+                        border-radius: 0;
+                        height: 1rem;
+                        width: 1rem;
+                    }
                 }
                 }
 

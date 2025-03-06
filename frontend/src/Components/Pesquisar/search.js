@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import api from "../../services/api";
 import search from "../../image/logo-search.png";
 import cordero_malbec from '../../image/cordero-malbec.png'
+import infoadd from '../../image/infoadd.png'
+import { Link }  from 'react-router-dom'
+
+
 export default function Search() {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
@@ -22,8 +26,10 @@ export default function Search() {
         const response = await api.get('/data/vinhos.json');
 
         const filteredResults = response.data.filter(vinho =>
-          vinho.nome.toLowerCase().includes(query.toLowerCase())
-        );
+          vinho.nome.toLowerCase().includes(query.toLowerCase()) 
+          || 
+          vinho.uva.toLowerCase().includes(query.toLowerCase())
+        )
 
         setResults(filteredResults);
       } catch (error) {
@@ -62,7 +68,17 @@ export default function Search() {
           {results.map((vinho) => (
             <li key={vinho.id}>
               <img src={cordero_malbec} alt="" />
-              <strong>{vinho.nome}</strong> - {vinho.tipo}
+              <div className="box-vinho">
+                <p>{vinho.nome}</p>
+                <p>750ml</p>
+                <p>{vinho.uva}</p>
+                 <div className="box-vinho-info-add">
+                 <Link to='/vinhoinformacoes'>
+                   <img src={infoadd} alt="informações adicionais" />
+                   <p>Mais informações</p>
+                 </Link>
+               </div>  
+               </div>    
             </li>
           ))}
         </ul>
