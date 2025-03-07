@@ -4,6 +4,7 @@ import Perfil from "../Pages/Perfil/Perfil"
 import Editar from "../Pages/Editar/Editar"
 import PaginaInicial from "../Pages/Pagina-Inicial/PaginaInicial"
 import Pesquisa from "../Pages/Pagina-pesquisa/Pesquisar"
+import PageVinhoInfo from "../Pages/Vinho/PageVinhoInfo"
 
 
 export default function Autenticado() {
@@ -14,6 +15,7 @@ export default function Autenticado() {
                 <Route path="/Perfil" element={<Perfil/>}/>
                 <Route path="/EditarUsuarios/:id" element={<Editar/>} /> 
                 <Route path="/pesquisar" element={<Pesquisa/>} />
+                <Route path="/vinhoInformacoes/:id" element={<PageVinhoInfo/>} />
 
                 <Route path="*" element={<PaginaInicial/>} />
             </Routes>

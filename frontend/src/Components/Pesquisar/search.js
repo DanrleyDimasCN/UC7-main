@@ -11,7 +11,7 @@ export default function Search() {
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-
+  
   useEffect(() => {
     if (query.length < 3) {
       setResults([]);
@@ -30,7 +30,7 @@ export default function Search() {
           || 
           vinho.uva.toLowerCase().includes(query.toLowerCase())
         )
-
+        
         setResults(filteredResults);
       } catch (error) {
         setError("Nenhum vinho encontrado.");
@@ -42,6 +42,7 @@ export default function Search() {
     const timer = setTimeout(fetchData, 500); 
     return () => clearTimeout(timer);
   }, [query]);
+
 
   return (
     <div className="box-search">
@@ -73,7 +74,7 @@ export default function Search() {
                 <p>750ml</p>
                 <p>{vinho.uva}</p>
                  <div className="box-vinho-info-add">
-                 <Link to='/vinhoinformacoes'>
+                 <Link to={`/vinhoInformacoes/${vinho.id}`}>
                    <img src={infoadd} alt="informações adicionais" />
                    <p>Mais informações</p>
                  </Link>
