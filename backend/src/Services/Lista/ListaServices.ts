@@ -1,35 +1,43 @@
-import prismaClient  from "../../prisma";
+import prismaClient from "../../prisma";
 
 interface ListaVinhos {
-    nome: string
-    IdUsuario: string
-    
+    IdUsuario: string;
+    vinhoId: number;
+    nome: string;
+    tipo: string;
+    nota: number;
+    favorito: boolean;
 }
 
 class ListaServices {
-    async cadastro_vinhos({nome, IdUsuario}: ListaVinhos) {
+    async cadastro_vinhos({ IdUsuario, vinhoId, nome, tipo, nota, favorito }: ListaVinhos) {
         const resposta = await prismaClient.minha_Lista.create({
             data: {
-               nome: nome,
-               IdUsuario: IdUsuario
-
+                IdUsuario,
+                vinhoId, 
+                nome,
+                tipo,
+                nota,
+                favorito
             }
-        })
-        return ({dados: 'Vinho Adicinado com sucesso'})
+        });
+
+        return { mensagem: "Vinho adicionado com sucesso" };
     }
 
-    async consultarVinhos () {
+    async consultarVinhos() {
         const resposta = await prismaClient.minha_Lista.findMany({
             select: {
-                nome: true
+                vinhoId: true,
+                nome: true,
+                tipo: true,
+                nota: true,
+                favorito: true
             }
-        })
+        });
 
-        return resposta
+        return resposta;
     }
 }
-
-
-
 
 export { ListaServices }

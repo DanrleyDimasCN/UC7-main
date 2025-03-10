@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from "react";
 import cordero from '../../image/cordero-malbec.png'
+import { toast } from "react-toastify"
 import { useParams } from "react-router-dom";
+import apiLocal from '../../services/api'
 import axios from "axios";
 
 export default function VinhoInfo() {
-    const [infoVinho, setInfoVinho] = useState(null);
-    const { id } = useParams();
+    const [ infoVinho, setInfoVinho ] = useState(null);
+    const [ modalAberto, setModalAberto ] = useState(false)
+    const [ nota, setNota ] = useState(0)
+    const [ favorito, setFavorito ] = useState(false)
+
+     const { id } = useParams();
 
   useEffect(() => {
     async function consultarVinho() {
@@ -30,6 +36,30 @@ export default function VinhoInfo() {
     }
   }, [id]);
 
+ 
+
+
+  async function addVinho() {
+    try {
+      await apiLocal.post(`/AdicionarVinho/${id}`, {
+        vinhoId: infoVinho.id,
+        nome: infoVinho.nome,
+        tipo: infoVinho.tipo,
+        nota,
+        favorito,
+      })
+
+      toast.success('Vinho Adicionado á sua lista', {
+        toastId: 'ToastId'
+      })
+      setModalAberto(false)
+    } catch (error) {
+      toast.error('Erro ao adicionar o vinho á sua lista',{
+         toastId: 'ToastId'
+      })
+    }
+  } 
+  
   if (!infoVinho) return <p>Carregando...</p>;
 
     return (
@@ -41,13 +71,39 @@ export default function VinhoInfo() {
                 <p>{infoVinho.nome}</p>
                 <p>{infoVinho.uva}</p>
                 <p>750ml</p>
-                <p>{infoVinho.nota}</p>
               </div>
             </h2>
             </div>
             <div className="box-vinhoInfo-button">
-                <button>Adicionar</button>
+                <button onClick={() => setModalAberto(true)}>Adicionar</button>
             </div>
+
+            {modalAberto && (
+              <div className="modal">
+                <h3>Adicionar Vinho à Minha Lista</h3>
+                <label>
+                  Nota:
+                  <input 
+                  type="number"
+                  value={nota}
+                  onChange={(e) => setNota(Number(e.target.value))}
+                  min="0"
+                  max="10"
+                  />
+                </label>
+
+                <label>
+                  Favorito:
+                  <input type="Checkbox" 
+                    checked={favorito}
+                    onChange={(e) => setFavorito(e.target.checked)}
+                  />
+                </label>
+
+                <button onClick={addVinho}>Confirmar</button>
+                <button onClick={() => setModalAberto(false)}>Cancelar</button>
+              </div>
+            )}
             <div className="box-vinho-informacao-completa">
             <p>Tipo: {infoVinho.tipo}</p>
             <p>Uva: {infoVinho.uva}</p>

@@ -5,7 +5,7 @@ const vinhosServices = new VinhosServices();
 class VinhosControllers {
     async registrar_vinhos(req: Request, res: Response) {
         try {
-            const { nome, tipo, uva, pais, regiao, descricao, nota, IdLista } = req.body;
+            const { nome, tipo, uva, pais, regiao, descricao,IdLista } = req.body;
             
             const resposta = await vinhosServices.registrar_vinhos({
                 nome,
@@ -14,7 +14,6 @@ class VinhosControllers {
                 pais,
                 regiao,
                 descricao,
-                nota,
                 IdLista
             });
 

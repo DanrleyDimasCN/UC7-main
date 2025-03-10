@@ -50,7 +50,11 @@ model Usuario {
 }
 model Minha_Lista {
   id String @id @default(uuid())
-  nome String? @db.VarChar(100)
+  vinhoId Int
+  nome String
+  tipo String
+  nota Int
+  favorito Boolean?
 
   // Relacionamento entre Usuario e lista
   usuario Usuario @relation("UsuarioLista", fields: [IdUsuario], references: [id])
@@ -70,7 +74,6 @@ model Vinhos {
   pais String @db.VarChar(100)
   regiao String @db.VarChar(100)
   descricao String @db.VarChar(300)
-  nota Float? 
 
  // Relacionamento entre Lista e vinhos
   lista Minha_Lista? @relation("ListaVinhos", fields: [IdLista], references: [id])
