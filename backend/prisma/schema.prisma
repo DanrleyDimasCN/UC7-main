@@ -50,7 +50,6 @@ model Usuario {
 }
 model Minha_Lista {
   id String @id @default(uuid())
-  vinhoId Int
   nome String
   tipo String
   nota Int

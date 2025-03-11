@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { AutenticadoContexto } from "../../Contexts/authContexts";
 import cordero from '../../image/cordero-malbec.png'
 import { toast } from "react-toastify"
 import { useParams } from "react-router-dom";
-import apiLocal from '../../services/api'
+import api from '../../services/api'
 import axios from "axios";
 
 export default function VinhoInfo() {
@@ -10,6 +11,7 @@ export default function VinhoInfo() {
     const [ modalAberto, setModalAberto ] = useState(false)
     const [ nota, setNota ] = useState(0)
     const [ favorito, setFavorito ] = useState(false)
+    const { IdUsuario } = useContext(AutenticadoContexto)
 
      const { id } = useParams();
 
@@ -41,8 +43,8 @@ export default function VinhoInfo() {
 
   async function addVinho() {
     try {
-      await apiLocal.post(`/AdicionarVinho/${id}`, {
-        vinhoId: infoVinho.id,
+      await api.post(`/AdicionarVinho`, {
+        IdUsuario,
         nome: infoVinho.nome,
         tipo: infoVinho.tipo,
         nota,
