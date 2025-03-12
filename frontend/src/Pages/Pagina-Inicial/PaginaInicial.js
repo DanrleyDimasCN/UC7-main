@@ -1,11 +1,20 @@
-import React from "react"
+import React, { useContext, useEffect } from "react"
 import { Link } from "react-router-dom";
 import "../Pagina-Inicial/paginaInicial.scss"
 import paginaInicialViniVeta from '../../image/img-pagina-inicial.png'
 import logoperfil from '../../image/logo-perfil.png'
 import luneta from '../../image/logo-search.png'
+import { AutenticadoContexto } from "../../Contexts/authContexts";
 
 export default function PaginaInicial() {
+
+    const { verificarToken } = useContext(AutenticadoContexto)
+
+    useEffect(() => {
+        verificarToken()
+    }, [verificarToken])
+    
+
     return (
         <div className="box-screen-1024">
             <div className="box-pagina-inicial">

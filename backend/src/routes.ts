@@ -31,8 +31,8 @@ router.get('/vinhos', new VinhosControllers().consultarVinhos)
 
 
 // Rota - Adicionar e consultar Vinhos
-router.post('/AdicionarVinho', new ListaControllers().lista_vinhos)
-router.get('/ConsultarLista', new ListaControllers().consultarVinhos)
+router.post('/AdicionarVinho', estaAutenticado, new ListaControllers().lista_vinhos)
+router.get('/ConsultarLista', estaAutenticado, new ListaControllers().consultarVinhos)
 
 
 export default router;
