@@ -41,7 +41,7 @@ class UsuariosServices {
                 email: email,
                 data_nascimento: dataNascimento.toISOString(),
                 genero: genero,
-                senha: senhaCriptografada,
+                password: senhaCriptografada,
             }
         });
 
@@ -75,7 +75,7 @@ class UsuariosServices {
                 data_nascimento: true,
                 genero: true,
                 create_at: true,
-                senha: true
+                password: true
                
             }
         });

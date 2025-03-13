@@ -30,12 +30,16 @@ export default function Search() {
           || 
           vinho.uva.toLowerCase().includes(query.toLowerCase())
         )
-        
+
+         if (!filteredResults) {
+          setLoading(false)
+          setError("Nenhum vinho encontrado.")
+        }
         setResults(filteredResults);
       } catch (error) {
-        setError("Nenhum vinho encontrado.");
+        setError(error);
       } finally {
-        setLoading(false);
+       
       }
     };
 

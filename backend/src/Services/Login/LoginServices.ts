@@ -19,7 +19,7 @@ class LoginServices {
             throw new Error('Usuário ou senha incorretos');
         }
     
-        const senhaValida = await compare(password, usuario.senha);
+        const senhaValida = await compare(password, usuario.password);
         if (!senhaValida) {
             throw new Error('Usuário ou senha incorretos');
         }

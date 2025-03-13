@@ -14,8 +14,8 @@ export default function Cadastrar() {
     const [email, setEmail ] = useState('')
     const [data_nascimento, setDataNascimento ] = useState('')
     const [genero, setGenero ] = useState('NAO_INFORMADO')
-    const [senha, setSenha ] = useState('')
-    const [confirmeSenha, setConfirmeSenha ] = useState('')
+    const [password, setPassword ] = useState('')
+    const [confirmePassword, setConfirmePassword ] = useState('')
 
     const escolherGenero = (e) => {
         setGenero(e.target.value);
@@ -29,12 +29,12 @@ export default function Cadastrar() {
       try {
         e.preventDefault()
 
-        if(!nome || !sobrenome || !email || !data_nascimento || !genero || !senha) {
+        if(!nome || !sobrenome || !email || !data_nascimento || !genero || !password) {
             alert("Campo em Branco")
             return
         }
 
-        if(senha !== confirmeSenha) {
+        if(password !== confirmePassword) {
             alert("No campo 'Confirme a sua senha' a senha tem que ser a mesma digitada acima.")
             return
         }
@@ -50,7 +50,7 @@ export default function Cadastrar() {
             email,
             data_nascimento: dataFormatada,
             genero,
-            senha,
+            password,
         })
         toast.success('Cadastro Efetuado com Sucesso', {
             toastId: 'ToastId'
@@ -137,15 +137,15 @@ export default function Cadastrar() {
             <input
             type="password"
             placeholder='Senha'
-            value={senha}
-            onChange={(e) => setSenha(e.target.value)}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             />
 
             <input
             type="password"
             placeholder='Confirme a sua Senha'
-            value={confirmeSenha}
-            onChange={(e) => setConfirmeSenha(e.target.value)}
+            value={confirmePassword}
+            onChange={(e) => setConfirmePassword(e.target.value)}
             />
 
             <div className="box-button-cadastrar"><button type="submit">Registrar</button></div>
