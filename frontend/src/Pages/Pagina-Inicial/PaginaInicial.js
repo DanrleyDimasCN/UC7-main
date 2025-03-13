@@ -32,7 +32,9 @@ export default function PaginaInicial() {
                         </Link>
                     </div>
                     <div className="box-minha-lista">
-                        <p>Minha Lista</p>
+                        <Link to='/minhaLista'>
+                            <p>Minha Lista</p>
+                        </Link>
                     </div>
                 </div> 
             </div>
