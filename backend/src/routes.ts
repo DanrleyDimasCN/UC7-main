@@ -17,7 +17,7 @@ router.get('/ConsultarAdmin', new AdminControllers().consultarAdmin)
 router.post('/CadastrarUsuarios',  new UsuariosControllers().cadastro_usuarios)
 router.post('/ConsultarUsuariosUnico', estaAutenticado, new UsuariosControllers().consultarUsuariosUnico)
 // router.get('/ConsultarUsuariosUnico', estaAutenticado, new UsuariosControllers().consultarUsuariosUnico)
-router.get('/ConsultarUsuarios', estaAutenticado, new UsuariosControllers().consultarUsuarios)
+router.get('/ConsultarUsuarios', new UsuariosControllers().consultarUsuarios)
 router.put('/AlterarDadosUsuarios', estaAutenticado, new UsuariosControllers().alterarDadosUsuarios)
 router.delete('/ApagarUsuarios/:id', estaAutenticado, new UsuariosControllers().apagarUsuarios)
 
@@ -26,8 +26,8 @@ router.post('/LoginUsuarios', new LoginUsuariosControllers().loginUsuarios)
 router.get('/VerificaToken', estaAutenticado, new LoginUsuariosControllers().verificaToken)
 
 // // Rota - Registrar Vinhos
-router.post('/CadastrarVinhos', new VinhosControllers().registrar_vinhos)
-router.get('/vinhos', new VinhosControllers().consultarVinhos)
+router.post('/CadastrarVinhos', estaAutenticado, new VinhosControllers().registrar_vinhos)
+router.get('/vinhos', estaAutenticado, new VinhosControllers().consultarVinhos)
 
 
 // Rota - Adicionar e consultar Vinhos
