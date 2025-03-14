@@ -9,20 +9,19 @@ export default function Login() {
 
         const { loginEntrada } = useContext(AutenticadoContexto)
         
-        
         const [email, setEmail] = useState('')
-        const [senha, setSenha] = useState('')
+        const [password, setPassword] = useState('')
 
         async function dadosLogin(e) {
             e.preventDefault()
-            if(!email || !senha) {
+            if(!email || !password) {
                 toast.warning('Prencha todos os campos')
                 return
             }
             try {
-                console.log("Email:", email, "Senha", senha);
+                console.log("Email:", email, "Senha", password);
                 
-               await loginEntrada(email, senha)
+               await loginEntrada(email, password)
             } catch (err) {
                 
             }
@@ -46,8 +45,8 @@ export default function Login() {
                 <input
                 type="password"
                 placeholder='Digite a Senha'
-                value={senha}
-                onChange={(e) => setSenha(e.target.value)}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 />
                 <div className="box-button-entrar">
                 <button>Entrar</button>

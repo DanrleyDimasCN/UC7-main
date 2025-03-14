@@ -127,7 +127,7 @@ export default function VinhoInfo() {
           </div>
         </div>
       )}
-      <Link to="/paginaInicial">
+      <Link to="/pesquisar">
         <p>Voltar</p>
       </Link>
     </div>

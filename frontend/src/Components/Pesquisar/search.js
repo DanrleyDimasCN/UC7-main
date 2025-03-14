@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
 import api from "../../services/api";
 import search from "../../image/logo-search.png";
-import cordero_malbec from '../../image/cordero-malbec.png'
-import infoadd from '../../image/infoadd.png'
-import { Link }  from 'react-router-dom'
-
+import cordero_malbec from "../../image/cordero-malbec.png";
+import infoadd from "../../image/infoadd.png";
+import { Link } from "react-router-dom";
 
 export default function Search() {
+ 
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  
+
   useEffect(() => {
     if (query.length < 3) {
       setResults([]);
@@ -23,30 +23,24 @@ export default function Search() {
       setError("");
 
       try {
-        const response = await api.get('/data/vinhos.json');
+        const response = await api.get("/data/vinhos.json");
 
-        const filteredResults = response.data.filter(vinho =>
-          vinho.nome.toLowerCase().includes(query.toLowerCase()) 
-          || 
-          vinho.uva.toLowerCase().includes(query.toLowerCase())
-        )
-
-         if (!filteredResults) {
-          setLoading(false)
-          setError("Nenhum vinho encontrado.")
-        }
+        const filteredResults = response.data.filter(
+          (vinho) =>
+            vinho.nome.toLowerCase().includes(query.toLowerCase()) ||
+            vinho.uva.toLowerCase().includes(query.toLowerCase())
+        );
         setResults(filteredResults);
       } catch (error) {
-        setError(error);
+        setError("Nenhum vinho encontrado.");
       } finally {
-       
+        setLoading(false);
       }
     };
 
-    const timer = setTimeout(fetchData, 500); 
+    const timer = setTimeout(fetchData, 500);
     return () => clearTimeout(timer);
   }, [query]);
-
 
   return (
     <div className="box-search">
@@ -65,10 +59,9 @@ export default function Search() {
       </form>
 
       <div className="box-search-resposta">
-  
         {loading && <p>Carregando...</p>}
         {error && <p>{error}</p>}
-  
+
         <ul className="results-list">
           {results.map((vinho) => (
             <li key={vinho.id}>
@@ -77,13 +70,13 @@ export default function Search() {
                 <p>{vinho.nome}</p>
                 <p>750ml</p>
                 <p>{vinho.uva}</p>
-                 <div className="box-vinho-info-add">
-                 <Link to={`/vinhoInformacoes/${vinho.id}`}>
-                   <img src={infoadd} alt="informações adicionais" />
-                   <p>Mais informações</p>
-                 </Link>
-               </div>  
-               </div>    
+                <div className="box-vinho-info-add">
+                  <Link to={`/vinhoInformacoes/${vinho.id}`}>
+                    <img src={infoadd} alt="informações adicionais" />
+                    <p>Mais informações</p>
+                  </Link>
+                </div>
+              </div>
             </li>
           ))}
         </ul>

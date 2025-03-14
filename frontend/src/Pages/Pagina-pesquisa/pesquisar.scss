@@ -2,6 +2,25 @@
     body {
         background-color: var(--cor-principal);
 
+       .box-button-voltar {
+        width: 100vw;
+        height: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a {
+            all: unset;
+            width: 4rem;
+            color: #fff;
+            background-color: var(--cor-secundaria);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            cursor: pointer;
+          }
+       }
+
         .box-search-background {
             display: flex;
             flex-direction: column;

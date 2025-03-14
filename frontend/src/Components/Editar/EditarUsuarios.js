@@ -8,7 +8,7 @@ export default function EditarUsuarios() {
     const { id } = useParams();
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
-    const [senha, setSenha] = useState('');
+    const [password, setPassword] = useState('');
     
     const token = localStorage.getItem('@token');
     console.log(token);
@@ -34,7 +34,7 @@ export default function EditarUsuarios() {
                 if (resposta.data) {
                     setNome(resposta.data.nome || "");
                     setEmail(resposta.data.email || "");
-                    setSenha(resposta.data.senha || "");
+                    setPassword(resposta.data.password || "");
                 } else {
                     toast.warn("Usuário não encontrado.");
                     mudarTela("/");
@@ -57,17 +57,17 @@ export default function EditarUsuarios() {
     async function enviarAlteracao(e) {
         e.preventDefault();
 
-        if (!nome || !email || !senha) {
+        if (!nome || !email || !password) {
             toast.error("Preencha todos os campos.");
             return;
         }
 
         try {
-            console.log("Enviando dados para alteração:", {nome, email, senha });
+            console.log("Enviando dados para alteração:", {nome, email, password });
             const resposta = await apiLocal.put(`/AlterarDadosUsuarios/${id}`, {
                 nome,
                 email,
-                senha
+                password
             }, {
                 headers: { Authorization: `Bearer ${token}` }
             });
@@ -101,8 +101,8 @@ export default function EditarUsuarios() {
                     <input
                         type="password"
                         placeholder="Digite a nova senha"
-                        value={senha}
-                        onChange={(e) => setSenha(e.target.value)}
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                     />
                     <button type="submit">Enviar</button>
             </form>
